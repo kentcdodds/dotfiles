@@ -1,4 +1,4 @@
-#enable the git bash completion commands
+# enable the git bash completion commands
 source ~/.git-completion
 
 #PROMPT STUFF
@@ -40,30 +40,35 @@ alias ll="ls -al";
 alias ..="cd ../";
 alias ..l="cd ../ && ll";
 alias pg="echo 'Pinging Google' && ping www.google.com";
+alias chrome="open -a \"Google Chrome.app\" --args -disable-new-avatar-menu"
 alias vb="vim ~/.bash_profile";
 alias sb="source ~/.bash_profile";
 alias de="cd ~/Desktop";
 alias d="cd ~/Developer";
-alias ss="cd ~/Developer/story-starter/";
 cdl() { cd "$@" && ll; }
+
+alias lt="http-server ~/Developer/love-texts";
 
 killport() { lsof -i tcp:"$@" | awk 'NR!=1 {print $2}' | xargs kill ;}
 
-# gulp aliases
-alias gw="gulp watch";
-alias gt="gulp test";
-alias gb="gulp build";
-alias gj="gulp jade";
-alias gwt="gulp watch:test";
-alias gs="gulp server";
+# git aliases
+alias gs="git status";
+alias gp="git pull";
+alias gf="git fetch";
+alias gpush="git push";
+
+# Project aliases
+alias af="cd ~/Developer/formly-js/angular-formly"
+
 # npm aliases
+alias ni="npm install";
 alias nr="npm run";
 alias nrs="nr start";
 alias nrb="nr build";
 alias nrt="nr test";
-alias flush-npm="rm -rf node_modules && npm cache clear && npm i";
+alias flush-npm="rm -rf node_modules && npm cache clean && npm i";
 # Alianza aliases
-alias a="cd ~/Developer/alianza/atac5/";
+alias a="cd ~/Developer/alianza/admin-portal/";
 
 # Custom functions
 mg () { mkdir "$@" && cd "$@" ; }
@@ -83,5 +88,8 @@ alias git=hub
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
 . $(brew --prefix)/etc/bash_completion
 fi
+
+export PATH="$PATH:$HOME/.rvm/bin"
+
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
