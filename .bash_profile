@@ -28,6 +28,8 @@ PS1="${YELLOW}\w${GREEN}\$(git_branch)${WHITE}\n$(rand_element 😅 👽 🔥 �
 PATH="/usr/local/bin:$PATH";
 ## JDK
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+## vim from homebrew
+PATH="$PATH:/usr/local/Cellar/vim/7.4.488/bin/"
 
 # #Custom bins
 PATH="$PATH:~/.bin";
@@ -43,6 +45,7 @@ alias pg="echo 'Pinging Google' && ping www.google.com";
 alias chrome="open -a \"Google Chrome.app\" --args -disable-new-avatar-menu"
 alias vb="vim ~/.bash_profile";
 alias sb="source ~/.bash_profile";
+alias vrc="vim ~/.vimrc";
 alias de="cd ~/Desktop";
 alias d="cd ~/Developer";
 cdl() { cd "$@" && ll; }
@@ -52,6 +55,7 @@ alias lt="http-server ~/Developer/love-texts";
 killport() { lsof -i tcp:"$@" | awk 'NR!=1 {print $2}' | xargs kill ;}
 
 # git aliases
+alias gc="git commit -m $1";
 alias gs="git status";
 alias gp="git pull";
 alias gf="git fetch";
