@@ -6,6 +6,7 @@ Plug 'jiangmiao/auto-pairs'
 
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ludovicchabant/vim-ctrlp-autoignore'
+Plug 'burke/matcher'
 
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-colorscheme-switcher'
@@ -22,6 +23,8 @@ Plug 'scrooloose/syntastic'
 
 " ES6 and JSX syntax support
 Plug 'mxw/vim-jsx'
+
+
 call plug#end()
 
 " syntastic config
