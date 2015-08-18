@@ -5,7 +5,7 @@ set number
 set tabstop=2
 set shiftwidth=2
 set shiftround
-set noexpandtab
+set expandtab
 set incsearch
 set ignorecase
 set hlsearch
