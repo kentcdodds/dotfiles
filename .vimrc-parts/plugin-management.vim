@@ -24,7 +24,7 @@ Plug 'scrooloose/syntastic'
 " ES6 and JSX syntax support
 Plug 'mxw/vim-jsx'
 
-
+Plug 'othree/yajs.vim'
 call plug#end()
 
 " syntastic config
