@@ -21,9 +21,6 @@ Plug 'kyuhi/vim-emoji-complete'
 " syntastic
 Plug 'scrooloose/syntastic'
 
-" ES6 and JSX syntax support
-Plug 'mxw/vim-jsx'
-
 Plug 'othree/yajs.vim'
 call plug#end()
 
@@ -35,3 +32,7 @@ let g:jsx_ext_required = 0
 
 " ctrlp config
 let g:ctrlp_extensions = ['autoignore']
+
+" NERDTree config
+let NERDTreeIgnore = ['\.swp$']
+let NERDTreeShowHidden = 1
