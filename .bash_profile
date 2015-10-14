@@ -71,8 +71,8 @@ alias nr="npm run";
 alias nrs="nr start";
 alias nrb="nr build";
 alias nrt="nr test";
-alias rmn="rm -rf node_modules"
-alias flush-npm="rm -rf node_modules && npm i";
+alias rmn="rm -rf node_modules;"
+alias flush-npm="rmn && npm i";
 # Alianza aliases
 alias a="cd ~/Developer/alianza/admin-portal/";
 
