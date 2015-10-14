@@ -1,3 +1,4 @@
+set viminfo="~/.vim/cache/.viminfo"
 set autoindent
 set smartindent
 set copyindent
@@ -15,4 +16,7 @@ set nowrap
 set mouse=a
 " colorscheme mustang
 syntax on
+
+" autosave on focus lost
+:au FocusLost * silent! wa
 

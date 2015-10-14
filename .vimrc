@@ -4,4 +4,5 @@ source ~/.vimrc-parts/window-swap.vim
 source ~/.vimrc-parts/trim-trailing-whitespace.vim
 source ~/.vimrc-parts/custom-key-mappings.vim
 source ~/.vimrc-parts/ctrl-p.vim
+source ~/.vimrc-parts/syntastic-config.vim
 
