@@ -1,0 +1,110 @@
+snippet ctrl
+	export default ${1:TheCtrl}
+
+	// @ngInject
+	function $1() {
+		var vm = this
+		${0}
+	}
+
+snippet dir
+	export default ngModule => {
+		ngModule.directive('${1:directiveName}', $1)
+
+		$1.filename = __filename
+
+		/* istanbul ignore next */
+		if (process.env.NODE_ENV === 'test') {
+			require('./${2:`expand('%:t:r')`}.test')(ngModule)
+		}
+
+		function $1(azDirective) {
+			return azDirective({
+				restrict: 'E',
+				template: \`
+					<div class="$2">
+					</div>
+				\`,
+				scope: {},
+				scopeTypes,
+				controllerAs: 'vm',
+				bindToController: true,
+				controller: ${3:TheCtrl},
+			})
+
+			// @ngInject
+			function $3() {
+				const vm = this
+
+				${0}
+			}
+
+			/* istanbul ignore next */
+			function scopeTypes(check) {
+				return {}
+			}
+		}
+	}
+
+snippet fact
+	export default ngModule => {
+		ngModule.factory('${1:`expand('%:t:r')`}', $1)
+
+		$1.filename = __filename
+
+		/* istanbul ignore next */
+		if (process.env.NODE_ENV === 'test') {
+			require('./$1.test')(ngModule)
+		}
+
+		function $1() {
+			return {
+			}
+
+			${0}
+		}
+	}
+
+snippet filt
+	export default ngModule =>
+		ngModule.filter('${1:`expand('%:t:r')`}', $1Function)
+
+		$1Function.filename = __filename
+
+		/* istanbul ignore next */
+		if (process.env.NODE_ENV === 'test') {
+			$1Function.test = require('./$1.test')(ngModule)
+		}
+
+		function $1Function() {
+			return function $1(input${2}) {
+				${0}
+			}
+		}
+	}
+
+snippet ngi
+	// @ngInject
+
+snippet prov
+export default ngModule => {
+		ngModule.provider('${1:`expand('%:t:r')`}', $1)
+
+		$1.filename = __filename
+
+		/* istanbul ignore next */
+		if (process.env.NODE_ENV === 'test') {
+			require('./$1.test')(ngModule)
+		}
+
+		function $1() {
+			angular.extend(this, {
+				$get: function $1Get() {
+					return this
+				},
+			})
+
+			${0}
+		}
+	}
+

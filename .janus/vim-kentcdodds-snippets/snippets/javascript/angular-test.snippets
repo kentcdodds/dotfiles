@@ -1,0 +1,112 @@
+snippet $httpBack
+	let $httpBackend
+
+	beforeEach(inject((_$httpBackend_) => {
+		$httpBackend = _$httpBackend_
+	}))
+
+	${0}
+
+	afterEach('verify $httpBackend is clean', function() {
+		$httpBackend.verifyNoOutstandingExpectation()
+		$httpBackend.verifyNoOutstandingRequest()
+	})
+
+snippet ibef
+	beforeEach(inject((${1}) => {
+		${0}
+	}))
+
+snippet iit
+	it(\`should ${1}\`, inject((${2}) => {
+		${0}
+	}))
+snippet tdir
+	import _ from 'lodash'
+	export default ngModule => {
+		describe('${1:`expand('%:t:r')`}', () => {
+			beforeEach(window.module(ngModule.name))
+
+			let $compile, scope, el, node, isolateScope, vm
+			const basicTemplate = \`<$1></$1>\`
+
+			beforeEach(inject((_$compile_, $rootScope) => {
+				$compile = _$compile_
+				scope = $rootScope.$new()
+			}))
+
+			it(\`should compile\`, () => {
+				compileAndDigest()
+				expect(node.className).to.contain('ng-scope')
+				expect(node.querySelector('.$1')).to.exist
+				expect(vm).to.exist
+			})
+
+			function compileAndDigest(template = basicTemplate, extraProps = {}) {
+				_.assign(scope, extraProps)
+				el = $compile(template)(scope)
+				node = el[0]
+				scope.$digest()
+				isolateScope = el.isolateScope()
+				vm = isolateScope.vm
+			}
+		})
+	}
+
+snippet tfact
+	export default ngModule => {
+		describe('${1:`expand('%:t:r')`}', () => {
+			beforeEach(window.module(ngModule.name))
+
+			let $1
+
+			beforeEach(inject((_$1_) => {
+				$1 = _$1_
+			}))
+
+			it(\`should be tested\`, () => {
+				expect('ᕕ( ᐛ )ᕗ').to.eq('ಠ_ಠ')${0}
+			})
+		})
+	}
+
+snippet tfilt
+	export default ngModule => {
+		describe('${1:`expand('%:t:r')`}', () => {
+			beforeEach(window.module(ngModule.name))
+
+			let $1
+
+			beforeEach(inject(($filter) => {
+				$1 = $filter('$1')
+			}))
+
+			it(\`should be tested\`, () => {
+				expect('|-o-| (-o-) |-o-|').to.eq('(-o-) |-o-| (-o-)')${0}
+			})
+		})
+	}
+
+snippet tngState
+	import _ from 'lodash'
+	export default (state, ngModule) => {
+		describe(\`state__${__filename}\`, () => {
+			beforeEach(window.module(ngModule.name))
+
+			let vm
+
+			beforeEach(inject(($controller, $translate) => {
+				const vm = $controller(state.controller, {
+					// mock injectables
+				})
+			}))
+
+			describe(\`${1}\`, () => {
+				it(\`should be tested\`, () => {
+					expect('ᕕ( ᐛ )ᕗ').to.eq('ಠ_ಠ')${0}
+				})
+			})
+
+		})
+	}
+
