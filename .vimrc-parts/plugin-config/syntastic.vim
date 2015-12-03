@@ -15,3 +15,4 @@ let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_json_checkers = ['jsonlint']
+let g:syntastic_html_checkers=[''] " there's just too much weirdness with angular

@@ -67,12 +67,11 @@ alias af="cd ~/Developer/formly-js/angular-formly"
 
 # npm aliases
 alias ni="npm install";
-alias nr="npm run";
-alias nrs="nr start";
-alias nrb="nr build";
-alias nrt="nr test";
+alias nrs="npm run start";
+alias nrb="npm run build";
+alias nrt="npm run test";
 alias rmn="rm -rf node_modules;"
-alias flush-npm="rmn && npm i";
+alias flush-npm="rm -rf node_modules && npm i";
 # Alianza aliases
 alias a="cd ~/Developer/alianza/admin-portal/";
 
@@ -156,3 +155,4 @@ elif type compctl &>/dev/null; then
   compctl -K _npm_completion npm
 fi
 ###-end-npm-completion-###
+
