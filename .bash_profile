@@ -42,7 +42,7 @@ alias ll="ls -al";
 alias ..="cd ../";
 alias ..l="cd ../ && ll";
 alias pg="echo 'Pinging Google' && ping www.google.com";
-alias chrome="open -a \"Google Chrome.app\" --args -disable-new-avatar-menu"
+alias oc="open -a 'Google Chrome' $1";
 alias vb="vim ~/.bash_profile";
 alias sb="source ~/.bash_profile";
 alias vrc="vim ~/.vimrc";
@@ -65,6 +65,12 @@ alias gpush="git push";
 # Project aliases
 alias af="cd ~/Developer/formly-js/angular-formly"
 
+# javascript air
+JSA_DIR="~/Developer/javascriptair/site"
+alias jsa="cd $JSA_DIR"
+alias sjsair="jsa && mvim && ttab -d $JSA_DIR npm run server && ttab -d $JSA_DIR npm run dev && open http://localhost:8080"
+alias jsimg="node ~/Developer/javascriptair/images/ $1"
+
 # npm aliases
 alias ni="npm install";
 alias nrs="npm run start";
@@ -84,7 +90,6 @@ source ~/.nvm/nvm.sh
 
 # Because SourceTree's $PATH gets screwed up starting it normally...
 alias st="open /Applications/SourceTree.app/Contents/MacOS/SourceTree";
-alias adev="st &&  wstorm ~/Developer/alianza/atac5"
 
 # use hub for git
 alias git=hub
