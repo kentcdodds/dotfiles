@@ -1,5 +1,4 @@
 # enable the git bash completion commands
-source ~/.git-completion
 
 #PROMPT STUFF
 GREEN=$(tput setaf 2);
