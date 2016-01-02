@@ -5,5 +5,5 @@ let NERDTreeIgnore = ['\.swp$', '\.DS_Store', '\.idea\/', '\.git\/']
 
 " nerdtreefind
 nnoremap F :NERDTreeFind <cr>
-
+nnoremap <leader>n :NERDTreeToggle<CR>
 

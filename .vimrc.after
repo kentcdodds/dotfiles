@@ -1,6 +1,0 @@
-source ~/.vimrc-parts/plugin-config/index.vim
-
-autocmd VimEnter * RandomColorScheme
-
-" janus adds this and it slows me down every time I focus back into vim :-(
-autocmd! AuNERDTreeCmd FocusGained
