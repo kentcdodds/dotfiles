@@ -33,7 +33,6 @@ PATH="$PATH:~/.bin";
 CDPATH=.:$HOME:$HOME/Developer:$HOME/Desktop
 
 # Custom Aliases
-alias vim="mvim";
 alias ll="ls -al";
 alias ..="cd ../";
 alias ..l="cd ../ && ll";
@@ -44,7 +43,7 @@ alias sb="source ~/.bash_profile";
 alias vrc="vim ~/.vimrc";
 alias de="cd ~/Desktop";
 alias d="cd ~/Developer";
-alias diary='pushd ~/Google\ Drive/Personal/Documents/Records/developer-diary && vim `date +"%Y-%m-%d"`.md && popd'
+alias diary='pushd ~/Google\ Drive/Personal/Documents/Records/developer-diary && mvim `date +"%Y-%m-%d"`.md && popd'
 cdl() { cd "$@" && ll; }
 
 alias lt="http-server ~/Developer/love-texts";
