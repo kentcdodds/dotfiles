@@ -33,6 +33,7 @@ PATH="$PATH:~/.bin";
 CDPATH=.:$HOME:$HOME/Developer:$HOME/Desktop
 
 # Custom Aliases
+alias vim="mvim";
 alias ll="ls -al";
 alias ..="cd ../";
 alias ..l="cd ../ && ll";
