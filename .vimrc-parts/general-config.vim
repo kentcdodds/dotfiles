@@ -20,3 +20,6 @@ syntax on
 " autosave on focus lost
 :au FocusLost * silent! wa
 
+" Spellcheck markdown
+autocmd BufRead,BufNewFile *.md setlocal spell
+
