@@ -1,0 +1,2 @@
+pbpaste | md-quote | pbcopy
+echo "text in clipboard now quoted"

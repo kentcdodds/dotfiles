@@ -28,6 +28,8 @@ PATH="/usr/local/bin:$PATH";
 
 # #Custom bins
 PATH="$PATH:~/.bin";
+# dotfile bins
+PATH="$PATH:~/.my_bin";
 
 ## CDPATH ALTERATIONS
 CDPATH=.:$HOME:$HOME/Developer:$HOME/Desktop
