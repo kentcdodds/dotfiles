@@ -24,3 +24,6 @@ syntax on
 autocmd BufRead,BufNewFile *.md setlocal spell
 autocmd BufRead,BufNewFile *.md set complete+=kspell
 
+" Syntax highlighting
+autocmd BufRead,BufNewFile *.es6 set syntax=javascript
+
