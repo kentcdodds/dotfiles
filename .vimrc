@@ -6,5 +6,3 @@ source ~/.vimrc-parts/window-swap.vim
 source ~/.vimrc-parts/trim-trailing-whitespace.vim
 source ~/.vimrc-parts/faster-grepping.vim
 
-autocmd VimEnter * RandomColorScheme
-
