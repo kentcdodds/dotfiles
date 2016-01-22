@@ -1,4 +1,4 @@
-# enable the git bash completion commands
+export TERM=xterm-256color
 
 #PROMPT STUFF
 GREEN=$(tput setaf 2);
@@ -42,11 +42,14 @@ alias pg="echo 'Pinging Google' && ping www.google.com";
 alias oc="open -a 'Google Chrome' $1";
 alias vb="vim ~/.bash_profile";
 alias sb="source ~/.bash_profile";
-alias vrc="vim ~/.vimrc";
+alias mvrc="mvim ~/.vimrc";
 alias de="cd ~/Desktop";
 alias d="cd ~/Developer";
 alias diary='pushd ~/Google\ Drive/Personal/Documents/Records/developer-diary && mvim `date +"%Y-%m-%d"`.md && popd'
 cdl() { cd "$@" && ll; }
+shorten() {
+  hive-api --url "$1" --custom "$2";
+}
 
 alias lt="http-server ~/Developer/love-texts";
 
@@ -75,8 +78,9 @@ alias nrb="npm run build";
 alias nrt="npm run test";
 alias rmn="rm -rf node_modules;"
 alias flush-npm="rm -rf node_modules && npm i";
-# Alianza aliases
-alias a="cd ~/Developer/alianza/admin-portal/";
+
+# PayPal aliases
+alias p="cd ~/Developer/paypal/p2pnodeweb";
 
 # Custom functions
 mg () { mkdir "$@" && cd "$@" ; }
