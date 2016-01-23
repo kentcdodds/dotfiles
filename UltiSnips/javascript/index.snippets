@@ -1,0 +1,28 @@
+snippet cl "console.log()" b
+console.log('${1:`date +"%Y-%m-%d %H:%M:%S"`}')
+endsnippet
+
+snippet vl "console.log('x', x)" b
+console.log('$1', ${1:variable})
+endsnippet
+
+snippet imp
+import ${1:*} from '${2:./`expand('%:p:h:t')`}'${0}
+endsnippet
+
+snippet ed
+export default ${1:{}}${0}
+endsnippet
+
+snippet edf
+export {default} from './`expand('%:p:h:t')`'
+endsnippet
+
+snippet esl
+/* eslint ${0} */
+endsnippet
+
+snippet esll
+// eslint-disable-line ${0}
+endsnippet
+
