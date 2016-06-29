@@ -9,9 +9,12 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
+Plugin 'flazz/vim-colorschemes'
 Plugin 'blueshirts/darcula'
 Plugin 'xolox/vim-colorscheme-switcher'
 Plugin 'xolox/vim-misc'
+
+
 Plugin 'moll/vim-node'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'

@@ -15,3 +15,14 @@ Session.vim
 *.swp
 .lvimrc
 
+# VS Code
+typings/
+.vscode
+
+# PayPal project specific stuff
+.nvmrc
+.agignore
+
+# Over-arching stuff
+*.ignored/
+*.ignored.*

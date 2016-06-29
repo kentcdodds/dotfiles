@@ -26,7 +26,7 @@ autocmd BufWritePost \(*/paypal/p2pnodeweb/*/calculator/*.js$\)\|\(*paypal/p2pno
 " https://github.com/jamischarles/dotfiles/commit/f907f3b66345b35d051061412d6bcb8b4b5a733d
 function! s:setupES6File()
 	setfiletype javascript
-	set expandtab
+	set noexpandtab
 
 	" Set the checkers for the current buffer to eslint
 	" let b:syntastic_checkers = ["eslint"] " b: means for the current buffer only...
