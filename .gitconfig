@@ -38,3 +38,5 @@
 	b = checkout -b
 	annihilate = "!f() { git branch -D \"$1\"; git push origin --delete \"$1\"; }; f"
 	ann = annihilate
+  cp = cherry-pick
+  rh = reset --hard

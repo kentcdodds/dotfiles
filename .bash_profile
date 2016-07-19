@@ -20,7 +20,8 @@ rand_element () {
 }
 
 #Default Prompt
-PS1="${YELLOW}\w${GREEN}\$(git_branch)${WHITE}\n$(rand_element 😅 👽 🔥 🚀 👻 ⛄ 👾 🍔 😄 🍰 🐑)  $ ";
+# PS1="${YELLOW}\w${GREEN}\$(git_branch)${WHITE}\n$(rand_element 😅 👽 🔥 🚀 👻 ⛄ 👾 🍔 😄 🍰 🐑)  $ ";
+PS1="${YELLOW}\w${GREEN}\$(git_branch)${WHITE}\n$ ";
 
 # PATH ALTERATIONS
 ## Node
