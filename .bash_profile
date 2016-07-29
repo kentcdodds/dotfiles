@@ -140,3 +140,7 @@ complete -o default -F _npm_install_completion npm
 # nvm
 source ~/.nvm/nvm.sh
 source ~/.avn/bin/avn.sh
+
+# begin nps completion
+source /Users/kdodds/.nps/completion.sh
+# end nps completion
