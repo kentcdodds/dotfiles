@@ -59,7 +59,7 @@ module.exports = {
     'hypercwd',
     'hyperterm-title',
     'hyperlinks',
-    'hyperterm-atom-dark'
+    'hyperterm-snazzy'
   ],
 
   // in development, you can create a directory under

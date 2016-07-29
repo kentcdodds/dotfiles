@@ -20,8 +20,8 @@ rand_element () {
 }
 
 #Default Prompt
-# PS1="${YELLOW}\w${GREEN}\$(git_branch)${WHITE}\n$(rand_element 😅 👽 🔥 🚀 👻 ⛄ 👾 🍔 😄 🍰 🐑)  $ ";
-PS1="${YELLOW}\w${GREEN}\$(git_branch)${WHITE}\n$ ";
+PS1="${YELLOW}\w${GREEN}\$(git_branch)${WHITE}\n$(rand_element 😅 👽 🔥 🚀 👻 ⛄ 👾 🍔 😄 🍰 🐑)  $ ";
+# PS1="${YELLOW}\w${GREEN}\$(git_branch)${WHITE}\n$ ";
 
 # PATH ALTERATIONS
 ## Node
@@ -64,21 +64,17 @@ alias gp="git pull";
 alias gf="git fetch";
 alias gpush="git push";
 alias gd="git diff";
-
-# Project aliases
-alias af="cd ~/Developer/formly-js/angular-formly"
+alias ga="git add .";
 
 # javascript air
 JSA_DIR="~/Developer/javascriptair/site"
 alias jsa="cd $JSA_DIR"
-alias sjsair="jsa && mvim && ttab -d $JSA_DIR npm run server && ttab -d $JSA_DIR npm run dev && open http://localhost:8080"
-alias jsimg="npm run compress-image -s -- $1 $2"
 
 # npm aliases
 alias ni="npm install";
-alias nrs="npm run start -s";
-alias nrb="npm run build -s";
-alias nrt="npm run test -s";
+alias nrs="npm run start -s --";
+alias nrb="npm run build -s --";
+alias nrt="npm run test -s --";
 alias rmn="rm -rf node_modules;"
 alias flush-npm="rm -rf node_modules && npm i && say NPM is done";
 alias nicache="npm install --cache-min 999999"
@@ -94,9 +90,6 @@ mg () { mkdir "$@" && cd "$@" ; }
 # VSCode
 function code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $*; }
 
-
-#nvm
-source ~/.nvm/nvm.sh
 
 
 # Because SourceTree's $PATH gets screwed up starting it normally...
@@ -144,5 +137,6 @@ _npm_install_completion () {
 complete -o default -F _npm_install_completion npm
 ## END BASH npm install autocomplete
 
-# avn setup to auto-use nvm
-[[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
+# nvm
+source ~/.nvm/nvm.sh
+source ~/.avn/bin/avn.sh
