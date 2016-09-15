@@ -26,3 +26,6 @@ typings/
 # Over-arching stuff
 *.ignored/
 *.ignored.*
+
+# git
+*.patch

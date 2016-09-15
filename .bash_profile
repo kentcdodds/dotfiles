@@ -23,9 +23,13 @@ rand_element () {
 PS1="${YELLOW}\w${GREEN}\$(git_branch)${WHITE}\n$(rand_element 😅 👽 🔥 🚀 👻 ⛄ 👾 🍔 😄 🍰 🐑)  $ ";
 # PS1="${YELLOW}\w${GREEN}\$(git_branch)${WHITE}\n$ ";
 
+# history size
+HISTSIZE=5000
+HISTFILESIZE=10000
+
 # PATH ALTERATIONS
 ## Node
-PATH="/usr/local/bin:$PATH";
+PATH="/usr/local/bin:$PATH:./node_modules/.bin";
 
 # #Custom bins
 PATH="$PATH:~/.bin";
@@ -87,9 +91,6 @@ alias fixEtcHosts="sudo -- sh -c \"echo '127.0.0.1 localhost.paypal.com' >> /etc
 # Custom functions
 mg () { mkdir "$@" && cd "$@" ; }
 
-# VSCode
-function code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $*; }
-
 
 
 # Because SourceTree's $PATH gets screwed up starting it normally...
@@ -144,3 +145,4 @@ source ~/.avn/bin/avn.sh
 # begin nps completion
 source /Users/kdodds/.nps/completion.sh
 # end nps completion
+
