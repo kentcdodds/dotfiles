@@ -20,10 +20,12 @@ rand_element () {
   printf $'%s\n' "${th[$(($(rand "${#th[*]}")+1))]}"
 }
 
+EMOJI="$(rand_element 😅 👽 🔥 🚀 👻 ⛄ 👾 🍔 😄 🍰 🐑 😎 🏎 🤖 😇 😼 💪 🦄 🥓 🌮 🎉 💯 ⚛️ 🐠 🐳 🐿)"
+
 #Default Prompt
-PS1="${YELLOW}\w${GREEN}\$(git_branch)${WHITE}\n$(rand_element 😅 👽 🔥 🚀 👻 ⛄ 👾 🍔 😄 🍰 🐑 😎 🏎 🤖 😇 😼 💪 🦄 🥓 🌮 🎉 💯 ⚛️ 🐠 🐳 🐿) ${RESET} $ ";
-# PS1="${YELLOW}\w${GREEN}\$(git_branch)${WHITE}\n$ ";
+PS1="${YELLOW}\w${GREEN}\$(git_branch)${RESET}\n${EMOJI}  $ ";
 # PS1="\n▲ "
+# PS1="\n${EMOJI}  "
 
 # history size
 HISTSIZE=5000
