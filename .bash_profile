@@ -3,7 +3,8 @@ export TERM=xterm-256color
 #PROMPT STUFF
 GREEN=$(tput setaf 2);
 YELLOW=$(tput setaf 3);
-WHITE=$(tput setaf 7)
+WHITE=$(tput setaf 7);
+RESET=$(tput sgr0);
 
 function git_branch {
   # Shows the current branch if in a git repository
@@ -20,12 +21,18 @@ rand_element () {
 }
 
 #Default Prompt
-PS1="${YELLOW}\w${GREEN}\$(git_branch)${WHITE}\n$(rand_element 😅 👽 🔥 🚀 👻 ⛄ 👾 🍔 😄 🍰 🐑)  $ ";
+PS1="${YELLOW}\w${GREEN}\$(git_branch)${WHITE}\n$(rand_element 😅 👽 🔥 🚀 👻 ⛄ 👾 🍔 😄 🍰 🐑 😎 🏎 🤖 😇 😼 💪 🦄 🥓 🌮 🎉 💯 ⚛️ 🐠 🐳 🐿) ${RESET} $ ";
 # PS1="${YELLOW}\w${GREEN}\$(git_branch)${WHITE}\n$ ";
+# PS1="\n▲ "
 
 # history size
 HISTSIZE=5000
 HISTFILESIZE=10000
+
+# weird ulimit stuff
+ulimit -n 100000 100000
+# sudo launchctl limit maxfiles 100000 100000
+# ulimit -n 1000000
 
 # PATH ALTERATIONS
 ## Node
@@ -56,10 +63,14 @@ cdl() { cd "$@" && ll; }
 shorten() {
   ~/Developer/hive-api/dist/cli.js --url "$1" --custom "$2";
 }
+alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
+alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
+alias deleteDSFiles="find . -name '.DS_Store' -type f -delete"
 
 alias lt="http-server ~/Developer/love-texts";
 
-killport() { lsof -i tcp:"$@" | awk 'NR!=1 {print $2}' | xargs kill ;}
+killport() { lsof -i tcp:"$@" | awk 'NR!=1 {print $2}' | xargs kill -9 ;}
+alias flushdns="sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder"
 
 # git aliases
 alias gc="git commit -m $1";
@@ -82,6 +93,13 @@ alias nrt="npm run test -s --";
 alias rmn="rm -rf node_modules;"
 alias flush-npm="rm -rf node_modules && npm i && say NPM is done";
 alias nicache="npm install --cache-min 999999"
+# yarn aliases
+alias yar="yarn run";
+alias yas="yarn run start -s --";
+alias yab="yarn run build -s --";
+alias yat="yarn run test -s --";
+alias yoff="yarn add --offline";
+alias ypm="echo \"Installing deps without lockfile and ignoring engines\" && yarn install --no-lockfile --ignore-engines"
 
 # PayPal aliases
 alias p="cd ~/Developer/paypal/p2pnodeweb";
@@ -146,3 +164,5 @@ source ~/.avn/bin/avn.sh
 source /Users/kdodds/.nps/completion.sh
 # end nps completion
 
+export CLICOLOR=1
+export LSCOLORS=ExFxBxDxCxegedabagacad

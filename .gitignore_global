@@ -7,6 +7,9 @@
 # npm
 npm-debug.log
 
+# yarn
+yarn-error.log
+
 # VIM
 *.un~
 Session.vim
@@ -29,3 +32,7 @@ typings/
 
 # git
 *.patch
+
+# eslint
+.eslintcache
+
