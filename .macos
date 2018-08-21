@@ -52,32 +52,12 @@ echo "installing a few global npm packages"
 npm install --global serve diff-so-fancy fkill-cli npm-quick-run semantic-release-cli
 
 echo "installing apps with brew cask"
-brew cask install alfred
-brew cask install google-chrome
-brew cask install firefox
-brew cask install brave
-brew cask install bettertouchtool
-brew cask install divvy
-brew cask install bartender
-brew cask install google-drive-file-stream
-brew cask install itsycal
-brew cask install visual-studio-code
-brew cask install 1password
-brew cask install dash
-brew cask install screenflow
-brew cask install marshallofsound-google-play-music-player
-brew cask install virtualbox
-brew cask install skype
-brew cask install sublime-text
-brew cask install vlc
-brew cask install kap
-brew cask install discord
-brew cask install atom
-brew cask install sourcetree
-brew cask install loopback
-brew cask install obs
-brew cask install handbrake
-brew cask install zoomus
+brew cask install alfred google-chrome firefox brave bettertouchtool divvy \
+bartender google-drive-file-stream itsycal visual-studio-code 1password dash \
+screenflow marshallofsound-google-play-music-player virtualbox skype \
+sublime-text vlc kap discord atom sourcetree loopback obs handbrake zoomus \
+betterzip qlcolorcode qlmarkdown qlstephen quicklook-json webpquicklook \
+qlimagesize suspicious-package qlvideo
 
 echo "Generating an RSA token for GitHub"
 ssh-keygen -t rsa -b 4096 -C "kent@doddsfamily.us"
