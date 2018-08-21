@@ -19,8 +19,9 @@ Session.vim
 .lvimrc
 
 # VS Code
-typings/
 .vscode
+# localhistory
+.history
 
 # PayPal project specific stuff
 .nvmrc

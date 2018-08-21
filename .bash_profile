@@ -20,12 +20,13 @@ rand_element () {
   printf $'%s\n' "${th[$(($(rand "${#th[*]}")+1))]}"
 }
 
-EMOJI="$(rand_element 😅 👽 🔥 🚀 👻 ⛄ 👾 🍔 😄 🍰 🐑 😎 🏎 🤖 😇 😼 💪 🦄 🥓 🌮 🎉 💯 ⚛️ 🐠 🐳 🐿)"
-
 #Default Prompt
-PS1="${YELLOW}\w${GREEN}\$(git_branch)${RESET}\n${EMOJI}  $ ";
-# PS1="\n▲ "
-# PS1="\n${EMOJI}  "
+setEmoji () {
+  EMOJI="$@"
+  PS1="${YELLOW}\w${GREEN}\$(git_branch)${RESET}\n${EMOJI}  $ ";
+}
+
+setEmoji $(rand_element 😅 👽 🔥 🚀 👻 ⛄ 👾 🍔 😄 🍰 🐑 😎 🏎 🤖 😇 😼 💪 🦄 🥓 🌮 🎉 💯 ⚛️ 🐠 🐳 🐿)
 
 # history size
 HISTSIZE=5000
@@ -50,6 +51,7 @@ CDPATH=.:$HOME:$HOME/Developer:$HOME/Desktop
 
 # Custom Aliases
 alias a="atom .";
+alias c="code .";
 alias ll="ls -al";
 alias ..="cd ../";
 alias ..l="cd ../ && ll";
@@ -60,7 +62,6 @@ alias sb="source ~/.bash_profile";
 alias mvrc="mvim ~/dotfiles/.vimrc";
 alias de="cd ~/Desktop";
 alias d="cd ~/Developer";
-alias diary='pushd ~/Google\ Drive/Personal/Documents/Records/developer-diary && mvim `date +"%Y-%m-%d"`.md && popd'
 cdl() { cd "$@" && ll; }
 shorten() {
   ~/Developer/hive-api/dist/cli.js --url "$1" --custom "$2";
@@ -68,8 +69,14 @@ shorten() {
 alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 alias deleteDSFiles="find . -name '.DS_Store' -type f -delete"
+alias kcd-oss="npx -p yo -p generator-kcd-oss -c 'yo kcd-oss'";
+alias crapp="cp -R ~/.crapp $1";
+alias npm-update="npx npm-check -u";
+npm-latest() {
+  npm info $1 | grep latest
+}
 
-alias lt="http-server ~/Developer/love-texts";
+alias lt="pushd ~/Developer/love-texts && python -m SimpleHTTPServer 8080 || popd";
 
 killport() { lsof -i tcp:"$@" | awk 'NR!=1 {print $2}' | xargs kill -9 ;}
 alias flushdns="sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder"
@@ -92,9 +99,11 @@ alias ni="npm install";
 alias nrs="npm run start -s --";
 alias nrb="npm run build -s --";
 alias nrt="npm run test -s --";
+alias nrv="npm run validate -s --";
 alias rmn="rm -rf node_modules;"
 alias flush-npm="rm -rf node_modules && npm i && say NPM is done";
-alias nicache="npm install --cache-min 999999"
+alias nicache="npm install --prefer-offline"
+alias nioff="npm install --offline"
 # yarn aliases
 alias yar="yarn run";
 alias yas="yarn run start -s --";
@@ -104,8 +113,6 @@ alias yoff="yarn add --offline";
 alias ypm="echo \"Installing deps without lockfile and ignoring engines\" && yarn install --no-lockfile --ignore-engines"
 
 # PayPal aliases
-alias p="cd ~/Developer/paypal/p2pnodeweb";
-alias np="p && NODE_ENV=test node ."
 alias fixEtcHosts="sudo -- sh -c \"echo '127.0.0.1 localhost.paypal.com' >> /etc/hosts\""
 
 # Custom functions
@@ -123,12 +130,6 @@ alias git=hub
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
 . $(brew --prefix)/etc/bash_completion
 fi
-
-export PATH="$PATH:$HOME/.rvm/bin"
-
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
 
 # Got this from Jamis: https://gist.githubusercontent.com/jamischarles/752ad319df780122c772168ad0bbc67e/raw/aa4f14368ff4cbcc6f3f219167deac9b0c939ef1/.npm_install_autocomplete.bashrc
 
@@ -158,13 +159,6 @@ _npm_install_completion () {
 complete -o default -F _npm_install_completion npm
 ## END BASH npm install autocomplete
 
-# nvm
-source ~/.nvm/nvm.sh
-source ~/.avn/bin/avn.sh
-
-# begin nps completion
-source /Users/kdodds/.nps/completion.sh
-# end nps completion
-
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
+
