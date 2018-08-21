@@ -118,7 +118,8 @@ alias fixEtcHosts="sudo -- sh -c \"echo '127.0.0.1 localhost.paypal.com' >> /etc
 # Custom functions
 mg () { mkdir "$@" && cd "$@" ; }
 
-
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 # Because SourceTree's $PATH gets screwed up starting it normally...
 alias st="open /Applications/SourceTree.app/Contents/MacOS/SourceTree";
@@ -143,17 +144,17 @@ _npm_install_completion () {
       words=("${COMP_WORDS[@]}")
     fi
 
-	local si="$IFS"
+  local si="$IFS"
 
-	# if your npm command includes `install` or `i `
-	if [[ ${words[@]} =~ 'install' ]] || [[ ${words[@]} =~ 'i ' ]]; then
-		local cur=${COMP_WORDS[COMP_CWORD]}
+  # if your npm command includes `install` or `i `
+  if [[ ${words[@]} =~ 'install' ]] || [[ ${words[@]} =~ 'i ' ]]; then
+    local cur=${COMP_WORDS[COMP_CWORD]}
 
-		# supply autocomplete words from `~/.npm`, with $cur being value of current expansion like 'expre'
-		COMPREPLY=( $( compgen -W "$(ls ~/.npm )" -- $cur ) )
-	fi
+    # supply autocomplete words from `~/.npm`, with $cur being value of current expansion like 'expre'
+    COMPREPLY=( $( compgen -W "$(ls ~/.npm )" -- $cur ) )
+  fi
 
-	IFS="$si"
+  IFS="$si"
 }
 # bind the above function to `npm` autocompletion
 complete -o default -F _npm_install_completion npm
@@ -161,4 +162,3 @@ complete -o default -F _npm_install_completion npm
 
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
-
