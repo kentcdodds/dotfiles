@@ -32,7 +32,7 @@ echo "brew installing stuff"
 # imagemagick: eventually I will need this for something
 # ffmpeg: eventually I'll need this for something
 # tree: really handy for listing out directories in text
-brew install libdvdcss ripgrep imagemagick bash-completion watchman tree
+brew install git hub libdvdcss ripgrep imagemagick bash-completion watchman tree
 
 echo "cloning dotfiles"
 git clone https://github.com/kentcdodds/dotfiles "${HOME}/dotfiles"
