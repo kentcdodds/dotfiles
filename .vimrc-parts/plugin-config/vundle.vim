@@ -30,8 +30,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'embear/vim-localvimrc'
 
 Plugin 'scrooloose/nerdcommenter'
-
-Plugin 'SirVer/ultisnips'
+Plugin 'haishanh/night-owl.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

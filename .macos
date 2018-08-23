@@ -19,7 +19,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 echo "Hello $(whoami)! Let's get you set up."
 
-echo "mkdir -p ${HOME}/dev"
+echo "mkdir -p $(HOME)/dev"
 
 echo "installing homebrew"
 # install homebrew https://brew.sh
@@ -32,7 +32,7 @@ echo "brew installing stuff"
 # imagemagick: eventually I will need this for something
 # ffmpeg: eventually I'll need this for something
 # tree: really handy for listing out directories in text
-brew install git hub libdvdcss ripgrep imagemagick bash-completion watchman tree
+brew install git hub libdvdcss ripgrep imagemagick bash-completion watchman yarn tree
 
 echo "cloning dotfiles"
 git clone https://github.com/kentcdodds/dotfiles "${HOME}/dotfiles"
@@ -42,11 +42,6 @@ ln -s "${HOME}/dotfiles/.my_bin" "${HOME}/.my_bin"
 ln -s "${HOME}/dotfiles/.vimrc" "${HOME}/.vimrc"
 ln -s "${HOME}/dotfiles/.vimrc-parts" "${HOME}/.vimrc-parts"
 
-echo "setting up vim plugins with Vundle"
-mkdir -p "${HOME}/.vim/bundle"
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-vim +PluginInstall +qall
-
 echo "installing node (via n-install)"
 curl -L https://git.io/n-install | bash
 
@@ -55,9 +50,6 @@ echo "npm --version: $(npm --version)"
 
 echo "installing a few global npm packages"
 npm install --global serve diff-so-fancy fkill-cli npm-quick-run semantic-release-cli
-
-# https://github.com/yarnpkg/yarn/issues/1116#issuecomment-354363271
-brew install yarn --without-node
 
 echo "installing apps with brew cask"
 brew cask install alfred google-chrome firefox brave bettertouchtool divvy \

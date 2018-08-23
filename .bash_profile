@@ -32,11 +32,6 @@ setEmoji $(rand_element 😅 👽 🔥 🚀 👻 ⛄ 👾 🍔 😄 🍰 🐑 �
 HISTSIZE=5000
 HISTFILESIZE=10000
 
-# weird ulimit stuff
-ulimit -n 100000 100000
-# sudo launchctl limit maxfiles 100000 100000
-# ulimit -n 1000000
-
 # PATH ALTERATIONS
 ## Node
 PATH="/usr/local/bin:$PATH:./node_modules/.bin";
@@ -47,7 +42,7 @@ PATH="$PATH:~/.bin";
 PATH="$PATH:~/.my_bin";
 
 ## CDPATH ALTERATIONS
-CDPATH=.:$HOME:$HOME/Developer:$HOME/Desktop
+CDPATH=.:$HOME:$HOME/code:$HOME/Desktop
 
 # Custom Aliases
 alias a="atom .";
@@ -61,10 +56,10 @@ alias vb="vim ~/.bash_profile";
 alias sb="source ~/.bash_profile";
 alias mvrc="mvim ~/dotfiles/.vimrc";
 alias de="cd ~/Desktop";
-alias d="cd ~/Developer";
+alias d="cd ~/code";
 cdl() { cd "$@" && ll; }
 shorten() {
-  ~/Developer/hive-api/dist/cli.js --url "$1" --custom "$2";
+  ~/code/hive-api/dist/cli.js --url "$1" --custom "$2";
 }
 alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
@@ -76,7 +71,7 @@ npm-latest() {
   npm info $1 | grep latest
 }
 
-alias lt="pushd ~/Developer/love-texts && python -m SimpleHTTPServer 8080 || popd";
+alias lt="pushd ~/code/love-texts && python -m SimpleHTTPServer 8080 || popd";
 
 killport() { lsof -i tcp:"$@" | awk 'NR!=1 {print $2}' | xargs kill -9 ;}
 alias flushdns="sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder"
@@ -89,10 +84,6 @@ alias gf="git fetch";
 alias gpush="git push";
 alias gd="git diff";
 alias ga="git add .";
-
-# javascript air
-JSA_DIR="~/Developer/javascriptair/site"
-alias jsa="cd $JSA_DIR"
 
 # npm aliases
 alias ni="npm install";
@@ -162,3 +153,5 @@ complete -o default -F _npm_install_completion npm
 
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
+
+export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
