@@ -19,7 +19,7 @@ Session.vim
 .lvimrc
 
 # VS Code
-.vscode
+.vscode/
 # localhistory
 .history
 

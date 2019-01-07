@@ -23,10 +23,15 @@ rand_element () {
 #Default Prompt
 setEmoji () {
   EMOJI="$@"
-  PS1="${YELLOW}\w${GREEN}\$(git_branch)${RESET}\n${EMOJI}  $ ";
 }
 
-setEmoji $(rand_element 😅 👽 🔥 🚀 👻 ⛄ 👾 🍔 😄 🍰 🐑 😎 🏎 🤖 😇 😼 💪 🦄 🥓 🌮 🎉 💯 ⚛️ 🐠 🐳 🐿)
+# setEmoji $(rand_element 😅 👽 🔥 🚀 👻 ⛄ 👾 🍔 😄 🍰 🐑 😎 🏎 🤖 😇 😼 💪 🦄 🥓 🌮 🎉 💯 ⚛️ 🐠 🐳 🐿)
+
+# PS1="${YELLOW}\w${GREEN}\$(git_branch)${RESET}\n${EMOJI}  $ ";
+PS1="${YELLOW}\w${GREEN}\$(git_branch)${RESET}\n$ ";
+
+alias jestify="PS1=\"🃏  \"";
+alias cypressify="PS1=\"🌀  \"";
 
 # history size
 HISTSIZE=5000
@@ -57,10 +62,8 @@ alias sb="source ~/.bash_profile";
 alias mvrc="mvim ~/dotfiles/.vimrc";
 alias de="cd ~/Desktop";
 alias d="cd ~/code";
+shorten() { node ~/code/kcd.im/node_modules/.bin/netlify-shortener "$1" "$2"; }
 cdl() { cd "$@" && ll; }
-shorten() {
-  ~/code/hive-api/dist/cli.js --url "$1" --custom "$2";
-}
 alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 alias deleteDSFiles="find . -name '.DS_Store' -type f -delete"
@@ -71,7 +74,7 @@ npm-latest() {
   npm info $1 | grep latest
 }
 
-alias lt="pushd ~/code/love-texts && python -m SimpleHTTPServer 8080 || popd";
+alias lt="pushd ~/code/love-texts && serve || popd";
 
 killport() { lsof -i tcp:"$@" | awk 'NR!=1 {print $2}' | xargs kill -9 ;}
 alias flushdns="sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder"
@@ -89,7 +92,9 @@ alias ga="git add .";
 alias ni="npm install";
 alias nrs="npm run start -s --";
 alias nrb="npm run build -s --";
+alias nrd="npm run dev -s --";
 alias nrt="npm run test -s --";
+alias nrtw="npm run test:watch -s --";
 alias nrv="npm run validate -s --";
 alias rmn="rm -rf node_modules;"
 alias flush-npm="rm -rf node_modules && npm i && say NPM is done";

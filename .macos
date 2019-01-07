@@ -52,11 +52,11 @@ echo "installing a few global npm packages"
 npm install --global serve diff-so-fancy fkill-cli npm-quick-run semantic-release-cli
 
 echo "installing apps with brew cask"
-brew cask install alfred google-chrome firefox brave bettertouchtool divvy \
+brew cask install alfred google-chrome firefox brave-browser bettertouchtool divvy \
 bartender google-drive-file-stream itsycal visual-studio-code 1password dash \
 screenflow marshallofsound-google-play-music-player virtualbox skype \
-sublime-text vlc kap discord atom sourcetree loopback obs handbrake zoomus \
-betterzip qlcolorcode qlmarkdown qlstephen quicklook-json webpquicklook \
+sublime-text vlc discord obs handbrake zoomus betterzip avibrazil-rdm \
+qlcolorcode qlmarkdown qlstephen quicklook-json webpquicklook \
 qlimagesize suspicious-package qlvideo
 
 echo "Generating an RSA token for GitHub"
@@ -864,7 +864,6 @@ install: \n\
   sip (App Store) \n\
   Euclid (App Store) \n\
   Audacity (https://www.audacityteam.org/download/) \n\
-  RDM (https://github.com/avibrazil/RDM) \n\
 \n\
 copy git config from your backup/re-login \n\
 copy .npmrc from your backup/re-login \n\
