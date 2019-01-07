@@ -54,8 +54,8 @@ npm install --global serve diff-so-fancy fkill-cli npm-quick-run semantic-releas
 echo "installing apps with brew cask"
 brew cask install alfred google-chrome firefox brave-browser bettertouchtool divvy \
 bartender google-drive-file-stream itsycal visual-studio-code 1password dash \
-screenflow marshallofsound-google-play-music-player virtualbox skype \
-sublime-text vlc discord obs handbrake zoomus betterzip avibrazil-rdm \
+screenflow marshallofsound-google-play-music-player virtualbox skype rocket \
+sublime-text vlc discord obs handbrake zoomus betterzip avibrazil-rdm sip \
 qlcolorcode qlmarkdown qlstephen quicklook-json webpquicklook \
 qlimagesize suspicious-package qlvideo
 
@@ -861,8 +861,8 @@ echo "Done. Note that some of these changes require a logout/restart to take eff
 printf "TODO:\n\
 install: \n\
   battery indicator (App Store) \n\
-  sip (App Store) \n\
   Euclid (App Store) \n\
+  Webcam Settings (App Store) \n\
   Audacity (https://www.audacityteam.org/download/) \n\
 \n\
 copy git config from your backup/re-login \n\
