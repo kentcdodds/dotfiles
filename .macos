@@ -21,7 +21,8 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 echo "Hello $(whoami)! Let's get you set up."
 
-echo "mkdir -p $(HOME)/dev"
+echo "mkdir -p $(HOME)/code"
+mkdir -p "$(HOME)/code"
 
 echo "installing homebrew"
 # install homebrew https://brew.sh
