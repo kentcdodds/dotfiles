@@ -850,14 +850,11 @@ for app in "Activity Monitor" \
   "Contacts" \
   "Dock" \
   "Finder" \
-  "Google Chrome Canary" \
-  "Google Chrome" \
   "Mail" \
   "Messages" \
   "Photos" \
   "Safari" \
   "SystemUIServer" \
-  "Terminal" \
   "iCal"; do
   killall "${app}" &> /dev/null
 done
@@ -871,6 +868,7 @@ install: \n\
   Webcam Settings (App Store) \n\
   Audacity (https://www.audacityteam.org/download/) \n\
 \n\
+Restart Terminal.app\n\
 copy git config from your backup/re-login \n\
 copy .npmrc from your backup/re-login \n\
 login to literally everything \n\
