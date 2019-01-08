@@ -62,7 +62,7 @@ bartender google-drive-file-stream itsycal visual-studio-code 1password dash \
 screenflow marshallofsound-google-play-music-player virtualbox skype rocket \
 sublime-text vlc discord obs handbrake zoomus betterzip avibrazil-rdm sip \
 qlcolorcode qlmarkdown qlstephen quicklook-json webpquicklook \
-qlimagesize suspicious-package qlvideo
+suspicious-package qlvideo
 
 echo "Generating an RSA token for GitHub"
 mkdir -p ~/.ssh
