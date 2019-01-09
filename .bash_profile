@@ -25,10 +25,12 @@ setEmoji () {
   EMOJI="$@"
 }
 
-# setEmoji $(rand_element 😅 👽 🔥 🚀 👻 ⛄ 👾 🍔 😄 🍰 🐑 😎 🏎 🤖 😇 😼 💪 🦄 🥓 🌮 🎉 💯 ⚛️ 🐠 🐳 🐿)
+newRandomEmoji () {
+  setEmoji $(rand_element 😅 👽 🔥 🚀 👻 ⛄ 👾 🍔 😄 🍰 🐑 😎 🏎 🤖 😇 😼 💪 🦄 🥓 🌮 🎉 💯 ⚛️ 🐠 🐳 🐿 🥳 🤩 🤯 🤠 👨‍💻 🦸‍♂️ 🧝‍♂️ 🧞‍♂️ 🧙‍♂️ 👨‍🚀 👨‍🔬 🕺 🦁 🐶 🐵 🐻 🦊 🐙 🦎 🦖 🦕 🦍 🦈 🐊 🦂 🐍 🐢 🐘 🐉 🦚 ✨ ☄️ ⚡️ 💥 💫 🧬 🔮 ⚗️ 🎊 🔭 ⚪️ 🔱)
+  PS1="${YELLOW}\w${GREEN}\$(git_branch)${RESET} ${EMOJI}\n$ ";
+}
 
-# PS1="${YELLOW}\w${GREEN}\$(git_branch)${RESET}\n${EMOJI}  $ ";
-PS1="${YELLOW}\w${GREEN}\$(git_branch)${RESET}\n$ ";
+newRandomEmoji
 
 alias jestify="PS1=\"🃏  \"";
 alias cypressify="PS1=\"🌀  \"";
