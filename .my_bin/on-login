@@ -1,3 +1,0 @@
-#!/bin/bash
-
-~/n/bin/node ~/dotfiles/on-login/set-random-color.js

@@ -1,0 +1,1 @@
+require('./set-random-color')
