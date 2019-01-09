@@ -39,14 +39,6 @@ brew install git hub libdvdcss ripgrep imagemagick bash-completion watchman tree
 # yarn: without node because we'll get it from installing n later
 brew install yarn --without-node
 
-echo "cloning dotfiles"
-git clone https://github.com/kentcdodds/dotfiles "${HOME}/dotfiles"
-ln -s "${HOME}/dotfiles/.bash_profile" "${HOME}/.bash_profile"
-ln -s "${HOME}/dotfiles/.gitignore_global" "${HOME}/.gitignore_global"
-ln -s "${HOME}/dotfiles/.my_bin" "${HOME}/.my_bin"
-ln -s "${HOME}/dotfiles/.vimrc" "${HOME}/.vimrc"
-ln -s "${HOME}/dotfiles/.vimrc-parts" "${HOME}/.vimrc-parts"
-
 echo "installing node (via n-install)"
 curl -L https://git.io/n-install | bash
 
@@ -70,6 +62,14 @@ ssh-keygen -t rsa -b 4096 -C "kent@doddsfamily.us"
 echo "Host *\n AddKeysToAgent yes\n UseKeychain yes\n IdentityFile ~/.ssh/id_rsa" | tee ~/.ssh/config
 eval "$(ssh-agent -s)"
 echo "run 'pbcopy < ~/.ssh/id_rsa.pub' and paste that into GitHub"
+
+echo "cloning dotfiles"
+git clone git@github.com:kentcdodds/dotfiles.git "${HOME}/dotfiles"
+ln -s "${HOME}/dotfiles/.bash_profile" "${HOME}/.bash_profile"
+ln -s "${HOME}/dotfiles/.gitignore_global" "${HOME}/.gitignore_global"
+ln -s "${HOME}/dotfiles/.my_bin" "${HOME}/.my_bin"
+ln -s "${HOME}/dotfiles/.vimrc" "${HOME}/.vimrc"
+ln -s "${HOME}/dotfiles/.vimrc-parts" "${HOME}/.vimrc-parts"
 
 echo "making system modifications:"
 
