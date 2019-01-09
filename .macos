@@ -72,6 +72,10 @@ eval "$(ssh-agent -s)"
 echo "run 'pbcopy < ~/.ssh/id_rsa.pub' and paste that into GitHub"
 
 echo "making system modifications:"
+
+# Make Chrome Two finger swipe for back and forward
+defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool TRUE
+
 ###############################################################################
 # General UI/UX                                                               #
 ###############################################################################
