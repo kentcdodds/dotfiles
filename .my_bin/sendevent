@@ -1,0 +1,15 @@
+#!/usr/bin/env swift
+
+/**
+    Send notification
+
+    author: voldemortensen (Garth Mortensen)
+    source: https://gist.github.com/voldemortensen/d62d22ab02327dc6253d2503a9bbd679
+*/
+
+import Foundation
+
+let eventName   = CommandLine.arguments[1]
+let notifyEvent = Notification.Name(eventName)
+
+DistributedNotificationCenter.default().post(name: notifyEvent, object: nil)
