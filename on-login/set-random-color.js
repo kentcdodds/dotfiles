@@ -37,8 +37,8 @@ if (highlight === undefined) {
   )
 }
 
-// restart finder for these settings to take
-execSync(`killall "Finder" &> /dev/null`)
+// send notification that preferences have changed
+execSync(`./../.my_bin/sendevent AppleColorPreferencesChangedNotification`)
 
 function random(array) {
   return array[Math.floor(Math.random() * array.length)]
