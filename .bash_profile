@@ -32,8 +32,8 @@ newRandomEmoji () {
 
 newRandomEmoji
 
-alias jestify="PS1=\"🃏  \"";
-alias cypressify="PS1=\"🌀  \"";
+alias jestify="PS1=\"🃏\n$ \"";
+alias cypressify="PS1=\"🌀\n$ \"";
 
 # history size
 HISTSIZE=5000
