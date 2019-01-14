@@ -38,7 +38,7 @@ if (highlight === undefined) {
 }
 
 // send notification that preferences have changed
-execSync(`./../.my_bin/sendevent AppleColorPreferencesChangedNotification`)
+execSync(`sendevent AppleColorPreferencesChangedNotification`)
 
 function random(array) {
   return array[Math.floor(Math.random() * array.length)]
