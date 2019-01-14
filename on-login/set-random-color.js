@@ -27,7 +27,7 @@ if (accent === undefined) {
 
 if (highlight === undefined) {
   try {
-    execSync(`defaults delete NSGlobalDomain AppleAccentColor`)
+    execSync(`defaults delete NSGlobalDomain AppleHighlightColor`)
   } catch (error) {
     // it's possible we deleted it already so we'll ignore this error
   }
