@@ -51,7 +51,7 @@ CDPATH=.:$HOME:$HOME/code:$HOME/Desktop
 
 # Custom Aliases
 alias c="code .";
-alias ll="ls -al";
+alias ll="ls -1a";
 alias ..="cd ../";
 alias ..l="cd ../ && ll";
 alias pg="echo 'Pinging Google' && ping www.google.com";
