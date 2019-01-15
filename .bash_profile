@@ -1,6 +1,8 @@
 #!/bin/bash
 
 export TERM=xterm-256color
+export CLICOLOR=1
+export LSCOLORS=ExFxBxDxCxegedabagacad
 
 # PROMPT STUFF
 GREEN=$(tput setaf 2);
@@ -85,10 +87,10 @@ alias nrd="npm run dev -s --";
 alias nrt="npm run test -s --";
 alias nrtw="npm run test:watch -s --";
 alias nrv="npm run validate -s --";
-alias rmn="rm -rf node_modules;"
+alias rmn="rm -rf node_modules";
 alias flush-npm="rm -rf node_modules && npm i && say NPM is done";
-alias nicache="npm install --prefer-offline"
-alias nioff="npm install --offline"
+alias nicache="npm install --prefer-offline";
+alias nioff="npm install --offline";
 
 ## yarn aliases
 alias yar="yarn run";
@@ -113,8 +115,5 @@ killport() { lsof -i tcp:"$*" | awk 'NR!=1 {print $2}' | xargs kill -9 ;}
 if [ -f "$(brew --prefix)/etc/bash_completion" ]; then
 . "$(brew --prefix)/etc/bash_completion"
 fi
-
-export CLICOLOR=1
-export LSCOLORS=ExFxBxDxCxegedabagacad
 
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
