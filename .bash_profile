@@ -42,9 +42,9 @@ HISTFILESIZE=10000
 PATH="/usr/local/bin:$PATH:./node_modules/.bin";
 
 # Custom bins
-PATH="$PATH:~/.bin";
+PATH="$PATH:$HOME/.bin";
 # dotfile bins
-PATH="$PATH:~/.my_bin";
+PATH="$PATH:$HOME/.my_bin";
 
 # CDPATH ALTERATIONS
 CDPATH=.:$HOME:$HOME/code:$HOME/Desktop
@@ -63,13 +63,13 @@ alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall 
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 alias deleteDSFiles="find . -name '.DS_Store' -type f -delete"
 alias kcd-oss="npx -p yo -p generator-kcd-oss -c 'yo kcd-oss'";
-alias crapp="cp -R ~/.crapp $1";
+function crapp { cp -R ~/.crapp "$@"; }
 alias npm-update="npx npm-check -u";
 alias lt="pushd ~/code/love-texts && serve || popd";
 alias flushdns="sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder"
 
 ## git aliases
-alias gc="git commit -m $1";
+function gc { git commit -m "$@"; }
 alias gs="git status";
 alias gp="git pull";
 alias gf="git fetch";
@@ -103,16 +103,15 @@ alias ypm="echo \"Installing deps without lockfile and ignoring engines\" && yar
 alias git=hub
 
 # Custom functions
-mg () { mkdir "$@" && cd "$@" ; }
+mg () { mkdir "$@" && cd "$@" || exit; }
 shorten() { node ~/code/kcd.im/node_modules/.bin/netlify-shortener "$1" "$2"; }
 cdl() { cd "$@" && ll; }
-npm-latest() { npm info $1 | grep latest; }
-killport() { lsof -i tcp:"$@" | awk 'NR!=1 {print $2}' | xargs kill -9 ;}
-
+npm-latest() { npm info "$1" | grep latest; }
+killport() { lsof -i tcp:"$*" | awk 'NR!=1 {print $2}' | xargs kill -9 ;}
 
 # Bash completion
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-. $(brew --prefix)/etc/bash_completion
+if [ -f "$(brew --prefix)/etc/bash_completion" ]; then
+. "$(brew --prefix)/etc/bash_completion"
 fi
 
 export CLICOLOR=1
