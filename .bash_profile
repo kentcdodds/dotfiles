@@ -33,7 +33,12 @@ newRandomEmoji () {
 newRandomEmoji
 
 alias jestify="PS1=\"🃏\n$ \"";
+alias testinglibify="PS1=\"🐙\n$ \"";
 alias cypressify="PS1=\"🌀\n$ \"";
+alias staticify="PS1=\"🚀\n$ \"";
+alias nodeify="PS1=\"💥\n$ \"";
+alias reactify="PS1=\"⚛\n$ \"";
+alias harryify="PS1=\"🧙‍\n$ \"";
 
 # history size
 HISTSIZE=5000
@@ -58,6 +63,7 @@ alias ..="cd ../";
 alias ..l="cd ../ && ll";
 alias pg="echo 'Pinging Google' && ping www.google.com";
 alias vb="vim ~/.bash_profile";
+alias cb="code ~/.bash_profile";
 alias sb="source ~/.bash_profile";
 alias de="cd ~/Desktop";
 alias d="cd ~/code";
@@ -66,9 +72,12 @@ alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall F
 alias deleteDSFiles="find . -name '.DS_Store' -type f -delete"
 alias kcd-oss="npx -p yo -p generator-kcd-oss -c 'yo kcd-oss'";
 function crapp { cp -R ~/.crapp "$@"; }
+function mcrapp { cp -R ~/.mcrapp "$@"; }
 alias npm-update="npx npm-check -u";
+alias yarn-update="yarn upgrade-interactive --latest";
 alias lt="pushd ~/code/love-texts && serve || popd";
 alias flushdns="sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder"
+alias dont_index_node_modules='find . -type d -name "node_modules" -exec touch "{}/.metadata_never_index" \;';
 
 ## git aliases
 function gc { git commit -m "$@"; }
@@ -78,6 +87,8 @@ alias gf="git fetch";
 alias gpush="git push";
 alias gd="git diff";
 alias ga="git add .";
+dif() { git diff --color --no-index "$1" "$2" | diff-so-fancy; }
+cdiff() { code --diff "$1" "$2"; }
 
 ## npm aliases
 alias ni="npm install";
@@ -94,10 +105,10 @@ alias nioff="npm install --offline";
 
 ## yarn aliases
 alias yar="yarn run";
-alias yas="yarn run start -s --";
-alias yab="yarn run build -s --";
-alias yat="yarn run test -s --";
-alias yav="yarn run validate -s --";
+alias yas="yarn run start";
+alias yab="yarn run build";
+alias yat="yarn run test";
+alias yav="yarn run validate";
 alias yoff="yarn add --offline";
 alias ypm="echo \"Installing deps without lockfile and ignoring engines\" && yarn install --no-lockfile --ignore-engines"
 
