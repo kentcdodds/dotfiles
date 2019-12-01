@@ -52,14 +52,14 @@ npm install --global serve diff-so-fancy fkill-cli npm-quick-run semantic-releas
 echo "installing apps with brew cask"
 brew cask install alfred google-chrome firefox brave-browser bettertouchtool divvy \
 bartender google-drive-file-stream itsycal visual-studio-code 1password dash \
-screenflow marshallofsound-google-play-music-player virtualbox skype rocket \
+screenflow marshallofsound-google-play-music-player skype workflowy \
 sublime-text vlc discord obs handbrake zoomus betterzip avibrazil-rdm sip \
 qlcolorcode qlmarkdown qlstephen quicklook-json webpquicklook \
-suspicious-package qlvideo
+suspicious-package qlvideo spotify focus dropbox front qmoji slack synergy
 
 echo "Generating an RSA token for GitHub"
 mkdir -p ~/.ssh
-ssh-keygen -t rsa -b 4096 -C "kent@doddsfamily.us"
+ssh-keygen -t rsa -b 4096 -C "me+github@kentcdodds.com"
 echo "Host *\n AddKeysToAgent yes\n UseKeychain yes\n IdentityFile ~/.ssh/id_rsa" | tee ~/.ssh/config
 eval "$(ssh-agent -s)"
 echo "run 'pbcopy < ~/.ssh/id_rsa.pub' and paste that into GitHub"
@@ -869,7 +869,9 @@ echo "Done. Note that some of these changes require a logout/restart to take eff
 printf "TODO:\n\
 install: \n\
   battery indicator (App Store) \n\
-  Euclid (App Store) \n\
+  Gifski (App Store) \n\
+  Runcat (App Store) \n\
+  Todoist (App Store) \n\
   Webcam Settings (App Store) \n\
   Audacity (https://www.audacityteam.org/download/) \n\
 \n\
