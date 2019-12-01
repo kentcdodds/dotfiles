@@ -24,6 +24,9 @@ echo "Hello $(whoami)! Let's get you set up."
 echo "mkdir -p $(HOME)/code"
 mkdir -p "$(HOME)/code"
 
+echo "mkdir -p $(HOME)/.ssh"
+mkdir -p "$(HOME)/.ssh"
+
 echo "installing homebrew"
 # install homebrew https://brew.sh
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
