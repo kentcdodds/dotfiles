@@ -36,9 +36,10 @@ echo "brew installing stuff"
 # ffmpeg: eventually I'll need this for something
 # tree: really handy for listing out directories in text
 # bat: A cat(1) clone with syntax highlighting and Git integration.
-brew install git hub libdvdcss ripgrep imagemagick bash-completion watchman tree bat
-# yarn: without node because we'll get it from installing n later
-brew install yarn --without-node
+brew install git hub libdvdcss ripgrep imagemagick watchman tree bat
+
+# installing yarn with bash because it tries to install node when using brew.
+curl -o- -L https://yarnpkg.com/install.sh | bash
 
 echo "installing node (via n-install)"
 curl -L https://git.io/n-install | bash
@@ -67,7 +68,7 @@ echo "run 'pbcopy < ~/.ssh/id_rsa.pub' and paste that into GitHub"
 
 echo "cloning dotfiles"
 git clone git@github.com:kentcdodds/dotfiles.git "${HOME}/dotfiles"
-ln -s "${HOME}/dotfiles/.bash_profile" "${HOME}/.bash_profile"
+ln -s "${HOME}/dotfiles/.zshrc" "${HOME}/.zshrc"
 ln -s "${HOME}/dotfiles/.gitignore_global" "${HOME}/.gitignore_global"
 ln -s "${HOME}/dotfiles/.my_bin" "${HOME}/.my_bin"
 ln -s "${HOME}/dotfiles/.vimrc" "${HOME}/.vimrc"
