@@ -1,0 +1,21 @@
+#!/usr/bin/env node
+
+var data = ''
+process.stdin.setEncoding('utf8')
+
+process.stdin.on('readable', function() {
+  var chunk = process.stdin.read()
+  if (chunk !== null) {
+    data += chunk
+  }
+})
+
+process.stdin.on('end', function() {
+  let urlString = data.toString()
+  if (!urlString.startsWith('http')) {
+    urlString = `https://${urlString}`
+  }
+  const url = new URL(urlString)
+  url.searchParams.set('af', '5236ad')
+  process.stdout.write(url.toString())
+})
