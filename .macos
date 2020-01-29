@@ -38,9 +38,6 @@ echo "brew installing stuff"
 # bat: A cat(1) clone with syntax highlighting and Git integration.
 brew install git hub libdvdcss ripgrep imagemagick watchman tree bat
 
-# installing yarn with bash because it tries to install node when using brew.
-curl -o- -L https://yarnpkg.com/install.sh | bash
-
 echo "installing node (via n-install)"
 curl -L https://git.io/n-install | bash
 
@@ -56,7 +53,7 @@ bartender google-drive-file-stream itsycal visual-studio-code 1password dash \
 screenflow marshallofsound-google-play-music-player skype workflowy \
 sublime-text vlc discord obs handbrake zoomus betterzip avibrazil-rdm sip \
 qlcolorcode qlmarkdown qlstephen quicklook-json webpquicklook \
-suspicious-package qlvideo spotify focus dropbox front qmoji slack synergy
+suspicious-package qlvideo spotify focus dropbox front qmoji slack
 
 echo "Generating an RSA token for GitHub"
 mkdir -p ~/.ssh
