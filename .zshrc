@@ -142,6 +142,16 @@ shorten() { node ~/code/kcd.im/node_modules/.bin/netlify-shortener "$1" "$2"; }
 cdl() { cd "$@" && ll; }
 npm-latest() { npm info "$1" | grep latest; }
 killport() { lsof -i tcp:"$*" | awk 'NR!=1 {print $2}' | xargs kill -9 ;}
+function quit () {
+  if [ -z "$1" ]; then
+    # display usage if no parameters given
+    echo "Usage: quit appname"
+  else
+    for appname in $1; do
+    osascript -e 'quit app "'$appname'"'
+    done
+  fi
+}
 
 autoload -Uz compinit && compinit
 # Bash completion
