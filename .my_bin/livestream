@@ -36,8 +36,8 @@ async function main() {
   } else {
     commands = [
       `displayplacer "id:${DISPLAY_ID} res:${LIVESTREAM_RES} hz:60 color_depth:8 scaling:on origin:(2560,0) degree:0"`,
-      `open /Applications/OBS.app`,
       `open https://www.youtube.com/my_live_events`,
+      `sleep 2 && open /Applications/OBS.app`,
     ]
     message = `Getting ready to start livestreaming!`
   }

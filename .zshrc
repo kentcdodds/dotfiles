@@ -34,13 +34,13 @@ newRandomEmoji () {
 
 newRandomEmoji
 
-alias jestify="PS1=\"🃏\n$ \"";
-alias testinglibify="PS1=\"🐙\n$ \"";
-alias cypressify="PS1=\"🌀\n$ \"";
-alias staticify="PS1=\"🚀\n$ \"";
-alias nodeify="PS1=\"💥\n$ \"";
-alias reactify="PS1=\"⚛\n$ \"";
-alias harryify="PS1=\"🧙‍\n$ \"";
+alias jestify="PS1=\"🃏\"$'\n'\"$ \"";
+alias testinglibify="PS1=\"🐙\"$'\n'\"$ \"";
+alias cypressify="PS1=\"🌀\"$'\n'\"$ \"";
+alias staticify="PS1=\"🚀\"$'\n'\"$ \"";
+alias nodeify="PS1=\"💥\"$'\n'\"$ \"";
+alias reactify="PS1=\"⚛️\"$'\n'\"$ \"";
+alias harryify="PS1=\"🧙‍\"$'\n'\"$ \"";
 
 # allow substitution in PS1
 setopt promptsubst
