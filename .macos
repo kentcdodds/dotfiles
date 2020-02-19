@@ -36,7 +36,9 @@ echo "brew installing stuff"
 # ffmpeg: eventually I'll need this for something
 # tree: really handy for listing out directories in text
 # bat: A cat(1) clone with syntax highlighting and Git integration.
-brew install git hub libdvdcss ripgrep imagemagick watchman tree bat
+# switchaudio-osx: allows me to switch the audio device via the command line
+brew install git hub libdvdcss ripgrep imagemagick watchman tree bat \
+switchaudio-osx
 
 echo "installing node (via n-install)"
 curl -L https://git.io/n-install | bash
