@@ -7,41 +7,14 @@ const exec = util.promisify(cp.exec)
 
 // displayplacer: https://github.com/jakehilborn/displayplacer
 
-const DISPLAY_ID = 'E2E3EB28-C231-7ED8-4800-2A2E45E7314D'
-const RECORD_RES = '1280x720'
-const RESTORE_RES = '2560x1440'
+const DISPLAY_ID = '71AFE85C-248E-7D79-BF75-B3539979FCD3'
 
 async function main() {
-  let commands
-  let message
-  const {stdout, stderr} = await exec('displayplacer list')
-  const match = new RegExp(
-    `Persistent screen id: ${DISPLAY_ID}[\\s\\S]*?Resolution: (?<res>[\\dx]+)$`,
-    'gm',
-  ).exec(stdout)
-  if (!match) {
-    console.error({stdout, stderr})
-    throw new Error(
-      'There was a problem parsing the output of "displayplacer list"',
-    )
-  }
-
-  const {res: currentResolution} = match.groups
-  if (currentResolution === RECORD_RES) {
-    commands = [
-      `displayplacer "id:${DISPLAY_ID} res:${RESTORE_RES} hz:60 color_depth:8 scaling:on origin:(2560,0) degree:0"`,
-      `osascript -e 'quit app "ScreenFlow"'`,
-    ]
-    message = 'Hope recording went well!'
-  } else {
-    commands = [
-      `displayplacer "id:${DISPLAY_ID} res:${RECORD_RES} hz:60 color_depth:8 scaling:on origin:(2560,0) degree:0"`,
-      `open /Applications/ScreenFlow.app`,
-    ]
-    message = `Getting ready to start recording!`
-  }
-
-  console.log(message)
+  const commands = [
+    `displayplacer "id:0A3A2A4F-BFD9-A636-6362-142C157B04AB res:2560x1440 color_depth:8 scaling:on origin:(0,0) degree:0" "id:71AFE85C-248E-7D79-BF75-B3539979FCD3 res:1280x720 color_depth:8 scaling:on origin:(2560,0) degree:0"`,
+    `open /Applications/ScreenFlow.app`,
+  ]
+  console.log(`Getting ready to start recording!`)
   await Promise.all(
     commands.map(cmd => spawn(cmd, {stdio: 'inherit', shell: true})),
   )
