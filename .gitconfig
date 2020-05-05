@@ -1,0 +1,37 @@
+[user]
+  name = Kent C. Dodds
+  email = me+github@kentcdodds.com
+
+[pull]
+  rebase = true
+[branch]
+  autosetuprebase = always
+[alias]
+  rh = reset --hard HEAD
+  b = checkout -b
+  co = checkout
+  ca = commit -a --verbose
+  cp = cherry-pick
+  amend = commit -a --amend --no-edit
+  unstage = reset --soft HEAD
+  cdiff = "!git diff $1 $1^"
+[push]
+  default = current
+[core]
+  pager = delta --theme="night-owlish"
+[interactive]
+    diffFilter = delta --color-only
+[color]
+	ui = true
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[color "diff"]
+	meta = 11
+	frag = magenta bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse

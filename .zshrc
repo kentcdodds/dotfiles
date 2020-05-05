@@ -77,7 +77,11 @@ PATH="$PATH:$HOME/.my_bin";
 CDPATH=.:$HOME:$HOME/code:$HOME/Desktop
 # CDPATH=($HOME $HOME/code $HOME/Desktop)
 
+# disable https://scarf.sh/
+SCARF_ANALYTICS=false
+
 # Custom Aliases
+alias code="\"/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin/code\""
 alias c="code .";
 alias ll="ls -1a";
 alias ..="cd ../";

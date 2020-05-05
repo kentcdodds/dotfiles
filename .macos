@@ -38,7 +38,7 @@ echo "brew installing stuff"
 # bat: A cat(1) clone with syntax highlighting and Git integration.
 # switchaudio-osx: allows me to switch the audio device via the command line
 brew install git hub libdvdcss ripgrep imagemagick watchman tree bat \
-switchaudio-osx
+delta switchaudio-osx
 
 echo "installing node (via n-install)"
 curl -L https://git.io/n-install | bash
@@ -70,9 +70,16 @@ echo "cloning dotfiles"
 git clone git@github.com:kentcdodds/dotfiles.git "${HOME}/dotfiles"
 ln -s "${HOME}/dotfiles/.zshrc" "${HOME}/.zshrc"
 ln -s "${HOME}/dotfiles/.gitignore_global" "${HOME}/.gitignore_global"
+ln -s "${HOME}/dotfiles/.gitconfig" "${HOME}/.gitconfig"
 ln -s "${HOME}/dotfiles/.my_bin" "${HOME}/.my_bin"
 ln -s "${HOME}/dotfiles/.vimrc" "${HOME}/.vimrc"
 ln -s "${HOME}/dotfiles/.vimrc-parts" "${HOME}/.vimrc-parts"
+
+# get bat and delta all configured
+mkdir -p "${HOME}/.config/bat/themes"
+ln -s "${HOME}/dotfiles/.config/bat/config" "${HOME}/.config/bat/config"
+git clone https://github.com/batpigandme/night-owlish "${HOME}/.config/bat/themes/night-owlish"
+bat cache --build
 
 echo "making system modifications:"
 
