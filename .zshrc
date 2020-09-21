@@ -83,7 +83,7 @@ SCARF_ANALYTICS=false
 
 # Custom Aliases
 alias code="\"/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin/code\""
-alias c="code .";
+function c { code ${@:-.} }
 alias ll="ls -1a";
 alias ..="cd ../";
 alias ..l="cd ../ && ll";
