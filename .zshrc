@@ -66,7 +66,8 @@ setopt HIST_IGNORE_DUPS
 PATH="/usr/local/bin:$PATH:./node_modules/.bin";
 
 ## Yarn
-PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+# PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+alias yarn="echo update the PATH in ~/.zshrc"
 
 # Custom bins
 PATH="$PATH:$HOME/.bin";
@@ -74,7 +75,7 @@ PATH="$PATH:$HOME/.bin";
 PATH="$PATH:$HOME/.my_bin";
 
 # CDPATH ALTERATIONS
-CDPATH=.:$HOME:$HOME/code:$HOME/Desktop
+CDPATH=.:$HOME:$HOME/code:$HOME/code/epic-react:$HOME/code/testingjavascript:$HOME/Desktop
 # CDPATH=($HOME $HOME/code $HOME/Desktop)
 
 # disable https://scarf.sh/
@@ -100,7 +101,6 @@ function crapp { cp -R ~/.crapp "$@"; }
 function mcrapp { cp -R ~/.mcrapp "$@"; }
 alias npm-update="npx npm-check -u";
 alias yarn-update="yarn upgrade-interactive --latest";
-alias lt="pushd ~/code/love-texts && serve || popd";
 alias flushdns="sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder"
 alias dont_index_node_modules='find . -type d -name "node_modules" -exec touch "{}/.metadata_never_index" \;';
 
@@ -124,7 +124,7 @@ alias nrt="npm run test -s --";
 alias nrtw="npm run test:watch -s --";
 alias nrv="npm run validate -s --";
 alias rmn="rm -rf node_modules";
-alias flush-npm="rm -rf node_modules && npm i && say NPM is done";
+alias flush-npm="rm -rf node_modules package-lock.json && npm i && say NPM is done";
 alias nicache="npm install --prefer-offline";
 alias nioff="npm install --offline";
 
@@ -155,6 +155,11 @@ function quit () {
     osascript -e 'quit app "'$appname'"'
     done
   fi
+}
+
+gif() {
+  ffmpeg -i "$1" -vf "fps=25,scale=iw/2:ih/2:flags=lanczos,palettegen" -y "/tmp/palette.png"
+  ffmpeg -i "$1" -i "/tmp/palette.png" -lavfi "fps=25,scale=iw/2:ih/2:flags=lanczos [x]; [x][1:v] paletteuse" -f image2pipe -vcodec ppm - | convert -delay 4 -layers Optimize -loop 0 - "${1%.*}.gif"
 }
 
 autoload -Uz compinit && compinit
