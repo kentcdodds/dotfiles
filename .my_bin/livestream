@@ -10,8 +10,8 @@ const exec = util.promisify(cp.exec)
 async function main() {
   const commands = [
     `displayplacer "id:0A3A2A4F-BFD9-A636-6362-142C157B04AB res:2560x1440 color_depth:8 scaling:on origin:(0,0) degree:0" "id:71AFE85C-248E-7D79-BF75-B3539979FCD3 res:1920x1080 color_depth:8 scaling:on origin:(2560,0) degree:0"`,
-    `open https://www.youtube.com/my_live_events`,
-    `sleep 2 && open /Applications/OBS.app`,
+//    `open https://www.youtube.com/my_live_events`,
+//    `sleep 2 && open /Applications/OBS.app`,
   ]
   console.log(`Getting ready to start livestreaming!`)
   await Promise.all(

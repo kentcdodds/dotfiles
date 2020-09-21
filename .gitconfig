@@ -19,6 +19,7 @@
   default = current
 [core]
   pager = delta --theme="night-owlish"
+	excludesfile = /Users/kentcdodds/.gitignore_global
 [interactive]
     diffFilter = delta --color-only
 [color]
@@ -35,3 +36,5 @@
 	old = red bold
 	new = green bold
 	whitespace = red reverse
+[init]
+	defaultBranch = main

@@ -1,0 +1,6 @@
+sudo rm -rf $(xcode-select -print-path)
+sudo rm -rf /Library/Developer/CommandLineTools
+xcode-select --install
+npm explore npm -g -- npm install node-gyp@latest
+npm explore npm -g -- npm explore npm-lifecycle -- npm install node-gyp@latest
+
