@@ -82,7 +82,7 @@ CDPATH=.:$HOME:$HOME/code:$HOME/code/epic-react:$HOME/code/testingjavascript:$HO
 SCARF_ANALYTICS=false
 
 # Custom Aliases
-alias code="\"/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin/code\""
+alias code="\"/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code\""
 function c { code ${@:-.} }
 alias ll="ls -1a";
 alias ..="cd ../";
@@ -99,7 +99,7 @@ alias deleteDSFiles="find . -name '.DS_Store' -type f -delete"
 alias kcd-oss="npx -p yo -p generator-kcd-oss -c 'yo kcd-oss'";
 function crapp { cp -R ~/.crapp "$@"; }
 function mcrapp { cp -R ~/.mcrapp "$@"; }
-alias npm-update="npx npm-check -u";
+alias npm-update="npx ncu --dep prod --dep dev --upgrade";
 alias yarn-update="yarn upgrade-interactive --latest";
 alias flushdns="sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder"
 alias dont_index_node_modules='find . -type d -name "node_modules" -exec touch "{}/.metadata_never_index" \;';
