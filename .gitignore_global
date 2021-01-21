@@ -21,8 +21,6 @@ Session.vim
 *.swp
 .lvimrc
 
-# VS Code
-.vscode/
 # localhistory
 .history
 
