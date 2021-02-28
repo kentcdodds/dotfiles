@@ -55,7 +55,7 @@ sublime-text vlc discord obs handbrake zoomus betterzip avibrazil-rdm sip \
 qlcolorcode qlmarkdown qlstephen quicklook-json webpquicklook \
 suspicious-package qlvideo spotify focus dropbox front qmoji slack
 
-echo "Generating an RSA token for GitHub"
+echo "Generating a new SSH key for GitHub"
 ssh-keygen -t ed25519 -C "me+github@kentcdodds.com"
 eval "$(ssh-agent -s)"
 touch ~/.ssh/config
