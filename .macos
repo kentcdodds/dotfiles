@@ -38,7 +38,10 @@ echo "brew installing stuff"
 # bat: A cat(1) clone with syntax highlighting and Git integration.
 # switchaudio-osx: allows me to switch the audio device via the command line
 brew install git hub libdvdcss ripgrep imagemagick watchman tree bat \
-delta switchaudio-osx node
+delta switchaudio-osx
+
+echo "installing node (via n-install)"
+curl -L https://git.io/n-install | bash
 
 echo "node --version: $(node --version)"
 echo "npm --version: $(npm --version)"
