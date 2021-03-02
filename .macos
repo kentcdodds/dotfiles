@@ -3,7 +3,7 @@
 # ~/.macos — https://mths.be/macos
 # Modified by Kent C. Dodds
 # Run without downloading:
-# curl https://raw.githubusercontent.com/kentcdodds/dotfiles/master/.macos | bash
+# curl https://raw.githubusercontent.com/kentcdodds/dotfiles/HEAD/.macos | bash
 
 # Close any open System Preferences panes, to prevent them from overriding
 # settings we’re about to change
