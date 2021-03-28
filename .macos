@@ -59,7 +59,7 @@ qlcolorcode qlmarkdown qlstephen quicklook-json webpquicklook \
 suspicious-package qlvideo spotify focus dropbox front qmoji slack
 
 echo "Generating a new SSH key for GitHub"
-ssh-keygen -t ed25519 -C "me+github@kentcdodds.com"
+ssh-keygen -t ed25519 -C "me+github@kentcdodds.com" -f ~/.ssh/id_ed25519
 eval "$(ssh-agent -s)"
 touch ~/.ssh/config
 echo "Host *\n AddKeysToAgent yes\n UseKeychain yes\n IdentityFile ~/.ssh/id_ed25519" | tee ~/.ssh/config
