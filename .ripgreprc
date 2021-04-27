@@ -1,0 +1,7 @@
+# Avoid long lines
+--max-columns=150
+--max-columns-preview
+
+# Give a little more context before/after the search
+--context=3
+

@@ -36,9 +36,11 @@ echo "brew installing stuff"
 # ffmpeg: eventually I'll need this for something
 # tree: really handy for listing out directories in text
 # bat: A cat(1) clone with syntax highlighting and Git integration.
+# delta: A fantastic diff tool
 # switchaudio-osx: allows me to switch the audio device via the command line
+# pgcli: postgres CLI
 brew install git hub libdvdcss ripgrep imagemagick watchman tree bat \
-delta switchaudio-osx
+delta switchaudio-osx pgcli
 
 echo "installing node (via n-install)"
 curl -L https://git.io/n-install | bash
@@ -50,10 +52,9 @@ echo "installing a few global npm packages"
 npm install --global serve fkill-cli npm-quick-run \
 semantic-release-cli npm-check-updates
 
-echo "installing apps with brew cask"
+echo "installing apps with brew --cask"
 brew install --cask alfred google-chrome firefox brave-browser bettertouchtool divvy \
-bartender google-drive itsycal visual-studio-code 1password dash \
-screenflow marshallofsound-google-play-music-player skype workflowy \
+bartender itsycal visual-studio-code 1password dash screenflow skype workflowy \
 sublime-text vlc discord obs handbrake zoom betterzip avibrazil-rdm sip \
 qlcolorcode qlmarkdown qlstephen quicklook-json webpquicklook \
 suspicious-package qlvideo spotify focus dropbox front qmoji slack
@@ -74,6 +75,7 @@ ln -s "${HOME}/dotfiles/.gitconfig" "${HOME}/.gitconfig"
 ln -s "${HOME}/dotfiles/.my_bin" "${HOME}/.my_bin"
 ln -s "${HOME}/dotfiles/.vimrc" "${HOME}/.vimrc"
 ln -s "${HOME}/dotfiles/.vimrc-parts" "${HOME}/.vimrc-parts"
+ln -s "${HOME}/dotfiles/.ripgreprc" "${HOME}/.ripgreprc"
 
 # get bat and delta all configured
 mkdir -p "${HOME}/.config/bat/themes"
