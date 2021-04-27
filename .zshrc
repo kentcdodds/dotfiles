@@ -42,6 +42,9 @@ alias nodeify="PS1=\"💥\"$'\n'\"$ \"";
 alias reactify="PS1=\"⚛️\"$'\n'\"$ \"";
 alias harryify="PS1=\"🧙‍\"$'\n'\"$ \"";
 
+# ripgrep config
+RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
+
 # allow substitution in PS1
 setopt promptsubst
 
@@ -99,10 +102,11 @@ alias deleteDSFiles="find . -name '.DS_Store' -type f -delete"
 alias kcd-oss="npx -p yo -p generator-kcd-oss -c 'yo kcd-oss'";
 function crapp { cp -R ~/.crapp "$@"; }
 function mcrapp { cp -R ~/.mcrapp "$@"; }
-alias npm-update="npx ncu --dep prod --dep dev --upgrade";
+alias npm-update="npx ncu --dep prod,dev --upgrade";
 alias yarn-update="yarn upgrade-interactive --latest";
 alias flushdns="sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder"
 alias dont_index_node_modules='find . -type d -name "node_modules" -exec touch "{}/.metadata_never_index" \;';
+alias check-nodemon="ps aux | rg -i '.bin/nodemon'";
 
 ## git aliases
 function gc { git commit -m "$@"; }
@@ -172,3 +176,5 @@ autoload -Uz compinit && compinit
 # fi
 
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
+source ~/.zshrc.private
+

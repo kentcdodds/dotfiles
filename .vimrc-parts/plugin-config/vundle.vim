@@ -27,8 +27,6 @@ Plugin 'mxw/vim-jsx'
 Plugin 'pangloss/vim-javascript'
 Plugin 'ctrlpvim/ctrlp.vim'
 
-Plugin 'embear/vim-localvimrc'
-
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'haishanh/night-owl.vim'
 
