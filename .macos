@@ -52,9 +52,9 @@ semantic-release-cli npm-check-updates
 
 echo "installing apps with brew cask"
 brew install --cask alfred google-chrome firefox brave-browser bettertouchtool divvy \
-bartender google-drive-file-stream itsycal visual-studio-code 1password dash \
+bartender google-drive itsycal visual-studio-code 1password dash \
 screenflow marshallofsound-google-play-music-player skype workflowy \
-sublime-text vlc discord obs handbrake zoomus betterzip avibrazil-rdm sip \
+sublime-text vlc discord obs handbrake zoom betterzip avibrazil-rdm sip \
 qlcolorcode qlmarkdown qlstephen quicklook-json webpquicklook \
 suspicious-package qlvideo spotify focus dropbox front qmoji slack
 
