@@ -76,6 +76,8 @@ alias yarn="echo update the PATH in ~/.zshrc"
 PATH="$PATH:$HOME/.bin";
 # dotfile bins
 PATH="$PATH:$HOME/.my_bin";
+# script kit
+PATH="$PATH:$HOME/.kenv/bin";
 
 # CDPATH ALTERATIONS
 CDPATH=.:$HOME:$HOME/code:$HOME/code/epic-react:$HOME/code/testingjavascript:$HOME/Desktop
