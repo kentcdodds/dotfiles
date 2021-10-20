@@ -36,9 +36,11 @@ echo "brew installing stuff"
 # ffmpeg: eventually I'll need this for something
 # tree: really handy for listing out directories in text
 # bat: A cat(1) clone with syntax highlighting and Git integration.
+# delta: A fantastic diff tool
 # switchaudio-osx: allows me to switch the audio device via the command line
+# pgcli: postgres CLI
 brew install git hub libdvdcss ripgrep imagemagick watchman tree bat \
-delta switchaudio-osx
+delta switchaudio-osx pgcli
 
 echo "installing node (via n-install)"
 curl -L https://git.io/n-install | bash
