@@ -57,7 +57,9 @@ brew install --cask alfred google-chrome firefox brave-browser bettertouchtool d
 bartender itsycal visual-studio-code 1password dash screenflow skype workflowy \
 sublime-text vlc discord obs handbrake zoom betterzip avibrazil-rdm sip \
 qlcolorcode qlmarkdown qlstephen quicklook-json webpquicklook \
-suspicious-package qlvideo spotify focus dropbox front qmoji slack
+suspicious-package qlvideo spotify focus dropbox front qmoji slack \
+wireguard-tools openaudible gifski todoist audacity docker linear sizzy \
+another-redis-desktop-manager
 
 echo "Generating a new SSH key for GitHub"
 ssh-keygen -t ed25519 -C "me+github@kentcdodds.com" -f ~/.ssh/id_ed25519
@@ -884,11 +886,7 @@ echo "Done. Note that some of these changes require a logout/restart to take eff
 printf "TODO:\n\
 install: \n\
   battery indicator (App Store) \n\
-  Gifski (App Store) \n\
   Runcat (App Store) \n\
-  Todoist (App Store) \n\
-  Webcam Settings (App Store) \n\
-  Audacity (https://www.audacityteam.org/download/) \n\
 \n\
 Restart Terminal.app\n\
 copy git config from your backup/re-login \n\

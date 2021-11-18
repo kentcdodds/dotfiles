@@ -69,8 +69,8 @@ setopt HIST_IGNORE_DUPS
 PATH="/usr/local/bin:$PATH:./node_modules/.bin";
 
 ## Yarn
-# PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-alias yarn="echo update the PATH in ~/.zshrc"
+PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+# alias yarn="echo update the PATH in ~/.zshrc"
 
 # Custom bins
 PATH="$PATH:$HOME/.bin";
