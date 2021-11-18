@@ -28,6 +28,9 @@ echo "installing homebrew"
 # install homebrew https://brew.sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/kentcdodds/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 echo "brew installing stuff"
 # hub: a github-specific version of git
 # libdvdcss: makes handbreak capable of ripping DVDs
@@ -59,7 +62,7 @@ sublime-text vlc discord obs handbrake zoom betterzip avibrazil-rdm sip \
 qlcolorcode qlmarkdown qlstephen quicklook-json webpquicklook \
 suspicious-package qlvideo spotify focus dropbox front qmoji slack \
 wireguard-tools openaudible gifski todoist audacity docker linear sizzy \
-another-redis-desktop-manager
+another-redis-desktop-manager loopback
 
 echo "Generating a new SSH key for GitHub"
 ssh-keygen -t ed25519 -C "me+github@kentcdodds.com" -f ~/.ssh/id_ed25519
