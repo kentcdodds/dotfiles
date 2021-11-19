@@ -84,7 +84,6 @@ PATH="$PATH:$HOME/.kenv/bin:$HOME/.kit/bin";
 
 # CDPATH ALTERATIONS
 CDPATH=.:$HOME:$HOME/code:$HOME/code/epic-react:$HOME/code/testingjavascript:$HOME/Desktop
-# CDPATH=($HOME $HOME/code $HOME/Desktop)
 
 # disable https://scarf.sh/
 SCARF_ANALYTICS=false
@@ -147,7 +146,7 @@ alias yoff="yarn add --offline";
 alias ypm="echo \"Installing deps without lockfile and ignoring engines\" && yarn install --no-lockfile --ignore-engines"
 
 ## use hub for git
-alias git=hub
+# alias git=hub
 
 # Custom functions
 mg () { mkdir "$@" && cd "$@" || exit; }
@@ -170,13 +169,8 @@ gif() {
   ffmpeg -i "$1" -i "/tmp/palette.png" -lavfi "fps=25,scale=iw/2:ih/2:flags=lanczos [x]; [x][1:v] paletteuse" -f image2pipe -vcodec ppm - | convert -delay 4 -layers Optimize -loop 0 - "${1%.*}.gif"
 }
 
+# zsh auto autocomplete
 autoload -Uz compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
-# Bash completion
-# TODO: couldn't get this to work with zsh...
-# autoload bashcompinit
-# bashcompinit
-# if [ -f "$(brew --prefix)/etc/bash_completion" ]; then
-# . "$(brew --prefix)/etc/bash_completion"
-# fi
+
 source ~/.zshrc.private
