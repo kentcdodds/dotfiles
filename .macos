@@ -42,9 +42,8 @@ echo "brew installing stuff"
 # delta: A fantastic diff tool
 # switchaudio-osx: allows me to switch the audio device via the command line
 # pgcli: postgres CLI
-# kid3: audio id3 tagger
 brew install git hub libdvdcss ripgrep imagemagick watchman tree bat \
-git-delta switchaudio-osx pgcli ffmpeg kid3
+git-delta switchaudio-osx pgcli ffmpeg
 
 echo "installing node (via n-install)"
 curl -L https://git.io/n-install | bash
@@ -62,7 +61,7 @@ bartender itsycal visual-studio-code 1password dash screenflow skype workflowy \
 sublime-text vlc discord obs handbrake zoom betterzip avibrazil-rdm sip \
 qlcolorcode qlmarkdown qlstephen quicklook-json webpquicklook \
 suspicious-package qlvideo spotify focus dropbox front slack openaudible \
-todoist audacity docker another-redis-desktop-manager loopback
+todoist audacity docker another-redis-desktop-manager loopback kid3
 
 echo "Generating a new SSH key for GitHub"
 ssh-keygen -t ed25519 -C "me+github@kentcdodds.com" -f ~/.ssh/id_ed25519
