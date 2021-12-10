@@ -34,6 +34,7 @@ newRandomEmoji () {
 
 newRandomEmoji
 
+alias remixify="PS1=\"💿\"$'\n'\"$ \"";
 alias jestify="PS1=\"🃏\"$'\n'\"$ \"";
 alias testinglibify="PS1=\"🐙\"$'\n'\"$ \"";
 alias cypressify="PS1=\"🌀\"$'\n'\"$ \"";
@@ -82,6 +83,9 @@ export N_PREFIX="$HOME/n"; [[ :$PATH: == *"$N_PREFIX/bin"* ]] || PATH="$N_PREFIX
 # script kit
 PATH="$PATH:$HOME/.kenv/bin:$HOME/.kit/bin";
 
+# fly manual install
+PATH="$HOME/.fly/bin:$PATH";
+
 # CDPATH ALTERATIONS
 CDPATH=.:$HOME:$HOME/code:$HOME/code/epic-react:$HOME/code/testingjavascript:$HOME/Desktop
 
@@ -104,8 +108,10 @@ alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall 
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 alias deleteDSFiles="find . -name '.DS_Store' -type f -delete"
 alias kcd-oss="npx -p yo -p generator-kcd-oss -c 'yo kcd-oss'";
-function crapp { cp -R ~/.crapp "$@"; }
-function mcrapp { cp -R ~/.mcrapp "$@"; }
+function rmx {
+  cp -R ~/.rmx "$@";
+  cd "$@";
+}
 alias npm-update="npx npm-check-updates --dep prod,dev --upgrade";
 alias yarn-update="yarn upgrade-interactive --latest";
 alias flushdns="sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder"
@@ -146,7 +152,7 @@ alias yoff="yarn add --offline";
 alias ypm="echo \"Installing deps without lockfile and ignoring engines\" && yarn install --no-lockfile --ignore-engines"
 
 ## use hub for git
-# alias git=hub
+alias git=hub
 
 # Custom functions
 mg () { mkdir "$@" && cd "$@" || exit; }
