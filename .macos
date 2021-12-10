@@ -42,8 +42,9 @@ echo "brew installing stuff"
 # delta: A fantastic diff tool
 # switchaudio-osx: allows me to switch the audio device via the command line
 # pgcli: postgres CLI
+# kid3: audio id3 tagger
 brew install git hub libdvdcss ripgrep imagemagick watchman tree bat \
-git-delta switchaudio-osx pgcli ffmpeg
+git-delta switchaudio-osx pgcli ffmpeg kid3
 
 echo "installing node (via n-install)"
 curl -L https://git.io/n-install | bash
