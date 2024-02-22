@@ -71,6 +71,9 @@ setopt HIST_IGNORE_DUPS
 # PATH ALTERATIONS
 PATH="/usr/local/bin:$PATH";
 
+## node_modules 😆 this is *way* faster than using "npm prefix" and it works fine.
+PATH="$PATH:./node_modules/.bin:../node_modules/.bin:../../node_modules/.bin:../../../node_modules/.bin:../../../../node_modules/.bin:../../../../../node_modules/.bin:../../../../../../node_modules/.bin:../../../../../../../node_modules/.bin"
+
 ## Deno
 PATH="/Users/kentcdodds/.deno/bin:$PATH"
 
@@ -192,19 +195,6 @@ source ~/.zshrc.private
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
-
-# Keep this at the bottom, but before fig I guess...
-add_node_modules_bin_to_path() {
-  local node_modules_bin="$(npm prefix 2>/dev/null)/node_modules/.bin"
-  if [[ -d "$node_modules_bin" && ":$PATH:" != *":$node_modules_bin:"* ]]; then
-    PATH="$node_modules_bin:$PATH"
-  fi
-}
-
-# Add the function to precmd_functions if it's not already included
-if [[ -z ${(M)precmd_functions:#add_node_modules_bin_to_path} ]]; then
-  precmd_functions+=(add_node_modules_bin_to_path)
-fi
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
