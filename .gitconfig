@@ -18,7 +18,7 @@
 [push]
   default = current
 [core]
-  pager = delta --theme="night-owlish"
+  pager = delta -- --theme="night-owlish"
 	excludesfile = /Users/kentcdodds/.gitignore_global
 [interactive]
     diffFilter = delta --color-only

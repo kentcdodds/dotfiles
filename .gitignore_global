@@ -32,9 +32,6 @@ Session.vim
 *.ignored/
 *.ignored.*
 
-# git
-*.patch
-
 # eslint
 .eslintcache
 

@@ -1,3 +1,5 @@
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 #!/bin/bash
 
 export TERM=xterm-256color
@@ -29,7 +31,7 @@ setEmoji () {
 }
 
 newRandomEmoji () {
-  setEmoji "$(random_element 😅 👽 🔥 🚀 👻 ⛄ 👾 🍔 😄 🍰 🐑 😎 🏎 🤖 😇 😼 💪 🦄 🥓 🌮 🎉 💯 ⚛️ 🐠 🐳 🐿 🥳 🤩 🤯 🤠 👨‍💻 🦸‍ 🧝‍ 🧞‍ 🧙‍ 👨‍🚀 👨‍🔬 🕺 🦁 🐶 🐵 🐻 🦊 🐙 🦎 🦖 🦕 🦍 🦈 🐊 🦂 🐍 🐢 🐘 🐉 🦚 ✨ ☄️ ⚡️ 💥 💫 🧬 🔮 ⚗️ 🎊 🔭 ⚪️ 🔱)"
+  setEmoji "$(random_element 😅 👽 🔥 🚀 👻 ⛄ 👾 🍔 😄 🍰 🐑 😎 🏎 🤖 😇 😼 💪 🦄 🥓 🌮 🎉 💯 ⚛️ 🐠 🐳 🐿 🥳 🤩 🤯 🤠 👨‍💻 🦸‍ 🧝‍ 🧞‍ 🧙‍ 🧑‍🚀 👨‍🔬 🕺 🦁 🐶 🐵 🐻 🦊 🐙 🦎 🦖 🦕 🦍 🦈 🐊 🦂 🐍 🐢 🐘 🐉 🦚 ✨ ☄️ ⚡️ 💥 💫 🧬 🔮 ⚗️ 🎊 🔭 ⚪️ 🔱)"
 }
 
 newRandomEmoji
@@ -38,8 +40,9 @@ alias remixify="PS1=\"💿\"$'\n'\"$ \"";
 alias jestify="PS1=\"🃏\"$'\n'\"$ \"";
 alias testinglibify="PS1=\"🐙\"$'\n'\"$ \"";
 alias cypressify="PS1=\"🌀\"$'\n'\"$ \"";
-alias staticify="PS1=\"🚀\"$'\n'\"$ \"";
+alias epicify="PS1=\"🚀\"$'\n'\"$ \"";
 alias nodeify="PS1=\"💥\"$'\n'\"$ \"";
+alias flyify="PS1=\"🎈\"$'\n'\"$ \"";
 alias reactify="PS1=\"⚛️\"$'\n'\"$ \"";
 alias harryify="PS1=\"🧙‍\"$'\n'\"$ \"";
 
@@ -66,15 +69,17 @@ setopt INC_APPEND_HISTORY
 setopt HIST_IGNORE_DUPS
 
 # PATH ALTERATIONS
-## Node
-PATH="/usr/local/bin:$PATH:./node_modules/.bin";
+PATH="/usr/local/bin:$PATH";
+
+## Deno
+PATH="/Users/kentcdodds/.deno/bin:$PATH"
 
 ## Yarn
 PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 # alias yarn="echo update the PATH in ~/.zshrc"
 
 # Custom bins
-PATH="$PATH:$HOME/.bin";
+PATH="$PATH:$HOME/.bin:$HOME/.local/bin";
 # dotfile bins
 PATH="$PATH:$HOME/.my_bin";
 # npm.im/n
@@ -87,7 +92,7 @@ PATH="$PATH:$HOME/.kenv/bin:$HOME/.kit/bin";
 PATH="$HOME/.fly/bin:$PATH";
 
 # CDPATH ALTERATIONS
-CDPATH=.:$HOME:$HOME/code:$HOME/code/epic-react:$HOME/code/testingjavascript:$HOME/Desktop
+CDPATH=.:$HOME:$HOME/code:$HOME/code/epicweb-dev:$HOME/code/epic-react:$HOME/code/testingjavascript:$HOME/Desktop
 
 # disable https://scarf.sh/
 SCARF_ANALYTICS=false
@@ -180,3 +185,26 @@ autoload -Uz compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
 source ~/.zshrc.private
+
+# bun completions
+[ -s "/Users/kentcdodds/.bun/_bun" ] && source "/Users/kentcdodds/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Keep this at the bottom, but before fig I guess...
+add_node_modules_bin_to_path() {
+  local node_modules_bin="$(npm prefix 2>/dev/null)/node_modules/.bin"
+  if [[ -d "$node_modules_bin" && ":$PATH:" != *":$node_modules_bin:"* ]]; then
+    PATH="$node_modules_bin:$PATH"
+  fi
+}
+
+# Add the function to precmd_functions if it's not already included
+if [[ -z ${(M)precmd_functions:#add_node_modules_bin_to_path} ]]; then
+  precmd_functions+=(add_node_modules_bin_to_path)
+fi
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
