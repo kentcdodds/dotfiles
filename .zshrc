@@ -1,5 +1,3 @@
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 #!/bin/bash
 
 export TERM=xterm-256color
@@ -79,7 +77,7 @@ PATH="/Users/kentcdodds/.deno/bin:$PATH"
 
 ## Yarn
 PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-# alias yarn="echo update the PATH in ~/.zshrc"
+alias yarn="echo update the PATH in ~/.zshrc"
 
 # Custom bins
 PATH="$PATH:$HOME/.bin:$HOME/.local/bin";
@@ -101,14 +99,14 @@ CDPATH=.:$HOME:$HOME/code:$HOME/code/epicweb-dev:$HOME/code/epic-react:$HOME/cod
 SCARF_ANALYTICS=false
 
 # Custom Aliases
-alias code="\"/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code\""
-function c { code ${@:-.} }
+alias code="\"/Applications/Cursor.app/Contents/Resources/app/bin/cursor\""
+function c { cursor ${@:-.} }
 alias ll="ls -1a";
 alias ..="cd ../";
 alias ..l="cd ../ && ll";
 alias pg="echo 'Pinging Google' && ping www.google.com";
 alias vz="vim ~/.zshrc";
-alias cz="code ~/.zshrc";
+alias cz="cursor ~/.zshrc";
 alias sz="source ~/.zshrc";
 alias de="cd ~/Desktop";
 alias d="cd ~/code";
@@ -135,7 +133,7 @@ alias gpush="git push";
 alias gd="git diff";
 alias ga="git add .";
 dif() { git diff --color --no-index "$1" "$2" | diff-so-fancy; }
-cdiff() { code --diff "$1" "$2"; }
+cdiff() { cursor --diff "$1" "$2"; }
 
 ## npm aliases
 alias ni="npm install";
@@ -195,6 +193,3 @@ source ~/.zshrc.private
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
-
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"

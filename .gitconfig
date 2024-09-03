@@ -17,6 +17,7 @@
   cdiff = "!git diff $1 $1^"
 [push]
   default = current
+	autoSetupRemote = true
 [core]
   pager = delta -- --theme="night-owlish"
 	excludesfile = /Users/kentcdodds/.gitignore_global
