@@ -52,8 +52,7 @@ echo "node --version: $(node --version)"
 echo "npm --version: $(npm --version)"
 
 echo "installing a few global npm packages"
-npm install --global serve fkill-cli npm-quick-run \
-semantic-release-cli npm-check-updates
+npm install --global serve fkill-cli npm-quick-run npm-check-updates
 
 echo "installing apps with brew --cask"
 brew install --cask raycast google-chrome firefox brave-browser bettertouchtool divvy \
