@@ -60,7 +60,8 @@ bartender itsycal visual-studio-code cursor 1password dash screenflow skype work
 sublime-text vlc discord obs handbrake zoom betterzip usr-sse2-rdm \
 qlcolorcode qlmarkdown qlstephen quicklook-json webpquicklook \
 suspicious-package qlvideo spotify focus dropbox front slack openaudible \
-todoist audacity docker kid3
+todoist audacity docker kid3 chatgpt mimestream notion-calendar linear-linear \
+loom gifski
 
 echo "Generating a new SSH key for GitHub"
 ssh-keygen -t ed25519 -C "me+github@kentcdodds.com" -f ~/.ssh/id_ed25519
