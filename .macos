@@ -56,12 +56,12 @@ npm install --global serve fkill-cli npm-quick-run \
 semantic-release-cli npm-check-updates
 
 echo "installing apps with brew --cask"
-brew install --cask alfred google-chrome firefox brave-browser bettertouchtool divvy \
-bartender itsycal visual-studio-code 1password dash screenflow skype workflowy \
+brew install --cask raycast google-chrome firefox brave-browser bettertouchtool divvy \
+bartender itsycal visual-studio-code cursor 1password dash screenflow skype workflowy \
 sublime-text vlc discord obs handbrake zoom betterzip avibrazil-rdm sip \
 qlcolorcode qlmarkdown qlstephen quicklook-json webpquicklook \
 suspicious-package qlvideo spotify focus dropbox front slack openaudible \
-todoist audacity docker another-redis-desktop-manager loopback kid3
+todoist audacity docker kid3
 
 echo "Generating a new SSH key for GitHub"
 ssh-keygen -t ed25519 -C "me+github@kentcdodds.com" -f ~/.ssh/id_ed25519
