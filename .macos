@@ -59,7 +59,7 @@ brew install --cask raycast google-chrome firefox brave-browser bettertouchtool 
 bartender itsycal visual-studio-code cursor 1password dash screenflow skype workflowy \
 sublime-text vlc discord obs handbrake zoom betterzip usr-sse2-rdm \
 qlcolorcode qlmarkdown qlstephen quicklook-json webpquicklook \
-suspicious-package qlvideo spotify focus dropbox front slack openaudible \
+suspicious-package qlvideo spotify dropbox front slack openaudible \
 todoist audacity docker kid3 chatgpt mimestream notion-calendar linear-linear \
 loom gifski
 
