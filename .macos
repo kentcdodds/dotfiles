@@ -43,7 +43,7 @@ echo "brew installing stuff"
 # switchaudio-osx: allows me to switch the audio device via the command line
 # pgcli: postgres CLI
 brew install git hub libdvdcss ripgrep imagemagick watchman tree bat \
-git-delta switchaudio-osx pgcli ffmpeg
+git-delta switchaudio-osx pgcli ffmpeg fly
 
 echo "installing node (via n-install)"
 curl -L https://git.io/n-install | bash
