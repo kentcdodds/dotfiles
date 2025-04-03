@@ -88,6 +88,7 @@ export N_PREFIX="$HOME/n"; [[ :$PATH: == *"$N_PREFIX/bin"* ]] || PATH="$N_PREFIX
 
 # script kit
 PATH="$PATH:$HOME/.kenv/bin:$HOME/.kit/bin";
+KIT_EDITOR=/usr/local/bin/cursor
 
 # fly manual install
 PATH="$HOME/.fly/bin:$PATH";
@@ -193,3 +194,11 @@ source ~/.zshrc.private
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# pnpm
+export PNPM_HOME="/Users/kentcdodds/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
